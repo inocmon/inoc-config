@@ -4,7 +4,7 @@ After=network.target
 
 [Service]
 Type=simple
-ExecStart=/usr/local/bin/inoc-node-terminal
+ExecStart=/usr/bin/inoc-node-terminal
 Restart=always
 RestartSec=5
 Environment=NODE_ENV=production
