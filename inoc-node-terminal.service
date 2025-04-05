@@ -1,0 +1,14 @@
+[Unit]
+Description=INOC Terminal Node.js Service
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/inoc-node-terminal
+Restart=always
+RestartSec=5
+Environment=NODE_ENV=production
+User=root
+
+[Install]
+WantedBy=multi-user.target
