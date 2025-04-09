@@ -1,13 +1,5 @@
 #!/bin/bash
-
-cd /opt/
-
-git clone https://github.com/inocmon/inoc-config.git
-
-cd inoc-config/
-
-git pull
-
+set -xv
 # Cria o diretório "rsa" apenas se ele não existir
 [ ! -d rsa ] && mkdir rsa
 
