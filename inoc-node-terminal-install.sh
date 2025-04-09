@@ -1,11 +1,13 @@
 #!/bin/bash
 
 cd /opt/
-#
+
 git clone https://github.com/inocmon/inoc-config.git
-#
+
 cd inoc-config/
-#
+
+git pull
+
 # Cria o diretório "rsa" apenas se ele não existir
 [ ! -d rsa ] && mkdir rsa
 
@@ -21,44 +23,37 @@ echo "# Conteúdo da chave pública:"
 echo "#"
 cat rsa/keypair.pem.pub
 
-
-## instalando certificados
+# Instalando certificados
 mkdir -p /opt/inoc-config/certs
 
-openssl req -nodes -new -x509 \
-  -keyout /opt/inoc-config/certs/server.key \
-  -out /opt/inoc-config/certs/server.cert \
-  -days 365 \
-  -subj "/C=BR/ST=Sao Paulo/L=Sao Paulo/O=Inocmon/OU=TI/CN=localhost/emailAddress=rinaldopvaz@gmail.com"
+REFRESH_CERTS_FORCE=false
+if [[ "$1" == "--refresh-certs-force" ]]; then
+    REFRESH_CERTS_FORCE=true
+fi
 
-chmod 600 /opt/inoc-config/certs/server.key
-chmod 644 /opt/inoc-config/certs/server.cert
-#
-#copiar arquivos 
-#
-(sleep 60; systemctl stop inoc-node-terminal) &
-#
-sleep 2
-#
-(sleep 60; cp inoc-node-* /usr/bin/) &
-#
-sleep 2
-#
-(sleep 60; chmod +x /usr/bin/inoc-*) &
-#
-sleep 2
-#
-(sleep 60; mv inoc-node-terminal.service /etc/systemd/system/inoc-node-terminal.service) &
-#
-sleep 2
-#
-(sleep 60; systemctl daemon-reload) &
-#
-sleep 2
-#
-(sleep 60; systemctl enable inoc-node-terminal) &
-#
-sleep 2
-#
-(sleep 60; systemctl start inoc-node-terminal) &
-#
+if [ "$REFRESH_CERTS_FORCE" = true ] || [ ! -f /opt/inoc-config/certs/server.key ] || [ ! -f /opt/inoc-config/certs/server.cert ]; then
+    echo "Gerando novo certificado SSL..."
+
+    openssl req -nodes -new -x509 \
+      -keyout /opt/inoc-config/certs/server.key \
+      -out /opt/inoc-config/certs/server.cert \
+      -days 365 \
+      -subj "/C=BR/ST=Sao Paulo/L=Sao Paulo/O=Inocmon/OU=TI/CN=localhost/emailAddress=rinaldopvaz@gmail.com"
+
+    chmod 600 /opt/inoc-config/certs/server.key
+    chmod 644 /opt/inoc-config/certs/server.cert
+else
+    echo "O certificado SSL já existe. Utilize '--refresh-certs-force' para gerar um novo."
+fi
+
+# Copiar arquivos e configuração do serviço
+chmod +x /opt/inoc-config/inoc-node-terminal
+cp inoc-node-terminal inoc-node-terminal.tmp
+cp inoc-node-terminal.tmp /usr/bin/inoc-node-terminal.tmp
+
+cp inoc-node-terminal.service inoc-node-terminal.service.tmp
+mv inoc-node-terminal.service.tmp /etc/systemd/system/inoc-node-terminal.service
+
+systemctl daemon-reload
+systemctl enable inoc-node-terminal
+systemctl restart inoc-node-terminal
