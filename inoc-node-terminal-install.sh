@@ -41,7 +41,7 @@ fi
 # Copiar arquivos e configuração do serviço
 chmod +x /opt/inoc-config/inoc-node-terminal
 cp inoc-node-terminal inoc-node-terminal.tmp
-cp inoc-node-terminal.tmp /usr/bin/inoc-node-terminal.tmp
+mv inoc-node-terminal.tmp /usr/bin/inoc-node-terminal
 
 cp inoc-node-terminal.service inoc-node-terminal.service.tmp
 mv inoc-node-terminal.service.tmp /etc/systemd/system/inoc-node-terminal.service
