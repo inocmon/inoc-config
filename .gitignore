@@ -2,3 +2,4 @@ inoc-terminal/
 rsa/
 certs/
 .env
+logs/*
