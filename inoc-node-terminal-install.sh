@@ -21,7 +21,7 @@ cat rsa/keypair.pem.pub
 mkdir -p /opt/inoc-config/certs
 
 REFRESH_CERTS_FORCE=false
-if [[ "$1" == "--refresh-certs-force" ]]; then
+if [ "$1" = "--refresh-certs-force" ]; then
     REFRESH_CERTS_FORCE=true
 fi
 
