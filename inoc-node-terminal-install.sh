@@ -1,7 +1,9 @@
 #!/bin/bash
-set -xv
+#set -xv
 # Cria o diretório "rsa" apenas se ele não existir
 [ ! -d rsa ] && mkdir rsa
+[ ! -d rsa ] && mkdir logs
+[ ! -f .env ] && touch .env
 
 # Gera a chave RSA apenas se ela não existir
 if [ ! -f rsa/keypair.pem ]; then
