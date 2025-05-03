@@ -58,9 +58,8 @@ apt install -y software-properties-common curl apt-transport-https ca-certificat
 # Instala PHP 8.2
 add-apt-repository -y ppa:ondrej/php
 apt update
-apt install -y  apache2 php8.2 php8.2-cli php8.2-common php8.2-curl php8.2-fpm php8.2-gd php8.2-gmp php8.2-json php8.2-mbstring php8.2-mysql php8.2-snmp php8.2-xml php8.2-zip libapache2-mod-php8.2
+apt install -y  snmp snmpd apache2 php8.2 php8.2-cli php8.2-common php8.2-curl php8.2-fpm php8.2-gd php8.2-gmp php8.2-json php8.2-mbstring php8.2-mysql php8.2-snmp php8.2-xml php8.2-zip libapache2-mod-php8.2
 
-apt remove -y php8.1 php8.1-*
 
 update-alternatives --set php /usr/bin/php8.2
 a2dismod php8.1
