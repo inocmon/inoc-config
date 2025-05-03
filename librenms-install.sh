@@ -99,11 +99,26 @@ ln -sf /usr/bin/composer /opt/librenms/composer
 chown librenms:librenms /opt/librenms/composer
 
 # Instala dependências PHP com usuário librenms
-if [ ! -d "/opt/librenms/vendor" ]; then
-    su - librenms -c "/opt/librenms/composer install --no-dev --no-interaction"
+# Garante as permissões corretas antes do Composer
+chown -R librenms:librenms /opt/librenms
+
+# Certifica-se de que composer esteja instalado corretamente
+apt install -y composer unzip
+
+# Executa composer com saída para log e verificação automática
+COMPOSER_LOG="/tmp/librenms_composer.log"
+
+su - librenms -c "/usr/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader &> ${COMPOSER_LOG}"
+
+# Verifica automaticamente se librenms.nonroot.cron foi criado
+if [ -f "/opt/librenms/misc/librenms.nonroot.cron" ]; then
+    cp /opt/librenms/misc/librenms.nonroot.cron /etc/cron.d/librenms
+    chmod 644 /etc/cron.d/librenms
+    chown root:root /etc/cron.d/librenms
 else
-    echo "Dependências já existem, atualizando..."
-    su - librenms -c "/opt/librenms/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader"
+    echo "❌ ERRO: librenms.nonroot.cron ainda não encontrado. Log do composer:"
+    cat ${COMPOSER_LOG}
+    exit 1
 fi
 
 # Verifica se o banco de dados já existe
