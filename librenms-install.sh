@@ -174,13 +174,13 @@ chmod -R 775 /opt/librenms
 
 
 #scheduller
-sudo cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
-sudo systemctl enable librenms-scheduler.timer
-sudo systemctl start librenms-scheduler.timer
+cp /opt/librenms/dist/librenms-scheduler.service /opt/librenms/dist/librenms-scheduler.timer /etc/systemd/system/
+systemctl enable librenms-scheduler.timer
+systemctl start librenms-scheduler.timer
 
 #
-sudo ln -s /opt/librenms/lnms /usr/local/bin/lnms
-sudo cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
+ln -s /opt/librenms/lnms /usr/local/bin/lnms
+cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
 
 #incluir librenms no grupo e sjusta permissões
 usermod -a -G librenms www-data

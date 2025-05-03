@@ -88,8 +88,15 @@ fi
 chmod +x /opt/inoc-config/inoc-node-terminal
 chown -R "${userName}:${userName}" /opt/inoc-config
 
-cp inoc-node-terminal /usr/bin/inoc-node-terminal
-cp inoc-node-terminal.service /etc/systemd/system/inoc-node-terminal.service
+#inoc node terminal
+cp inoc-node-terminal inoc-node-terminal-tmp
+mv inoc-node-terminal-tmp /usr/bin/inoc-node-terminal
+cp inoc-node-terminal.service inoc-node-terminal.service-tmp
+mv inoc-node-terminal.service-tmp /etc/systemd/system/inoc-node-terminal.service
+
+#inoc config4
+cp inoc-config4 inoc-config4-tmp
+mv inoc-config4-tmp /usr/bin/inoc-config4
 
 systemctl daemon-reload
 systemctl enable inoc-node-terminal
