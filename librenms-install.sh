@@ -60,8 +60,11 @@ add-apt-repository -y ppa:ondrej/php
 apt update
 apt install -y apache2
 apt install -y software-properties-common
+apt install composer -y
+apt install mysql-server mysql-client -y
+mysql_secure_installation
 add-apt-repository -y ppa:ondrej/php
-apt install -y snmp snmpd apache2 php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
+apt install -y snmp snmpd php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
 
 
 update-alternatives --set php /usr/bin/php8.2
