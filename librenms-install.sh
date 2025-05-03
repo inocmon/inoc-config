@@ -56,8 +56,9 @@ apt install -y software-properties-common curl apt-transport-https ca-certificat
 
 # Instala pacotes necessários do Python
 apt install -y python3 python3-pip python3-venv python3-dev python3-setuptools python3-wheel
+apt install -y cronic
 
-# Instala PHP 8.2
+# Instala PHP
 add-apt-repository -y ppa:ondrej/php
 apt update
 apt install -y apache2
@@ -70,9 +71,20 @@ apt install -y acl
 add-apt-repository -y ppa:ondrej/php
 apt install -y php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
 
+apt purge -y php*-fpm
+apt install -y libapache2-mod-php
 
-a2enmod php
+PHP_MODULE=$(basename $(find /usr/lib/apache2/modules/ -name "libphp*.so" | sort -r | head -n1) .so | sed 's/lib//')
+
+if [ -z "$PHP_MODULE" ]; then
+    echo "❌ Nenhum módulo PHP encontrado no Apache. Verifique instalação."
+    exit 1
+fi
+
+a2dismod mpm_event mpm_worker php* 2>/dev/null || true
+a2enmod mpm_prefork "${PHP_MODULE}"
 systemctl restart apache2
+
 
 
 
@@ -121,6 +133,21 @@ else
     exit 1
 fi
 
+# Validação adicional imediata:
+[ -f /etc/cron.d/librenms ] || { echo "❌ Cron do LibreNMS não foi criado corretamente!"; exit 1; }
+
+# Configuração do logrotate com validação imediata
+if [ -f "/opt/librenms/misc/librenms.logrotate" ]; then
+    cp /opt/librenms/misc/librenms.logrotate /etc/logrotate.d/librenms
+else
+    echo "❌ ERRO: Arquivo logrotate do LibreNMS não encontrado!"
+    exit 1
+fi
+
+# Validação adicional imediata:
+[ -f /etc/logrotate.d/librenms ] || { echo "❌ Logrotate não foi criado corretamente!"; exit 1; }
+
+
 # Verifica se o banco de dados já existe
 if ! mysql -u root -e 'use librenms;' 2>/dev/null; then
     echo "Banco de dados não encontrado. Criando..."
@@ -139,8 +166,11 @@ sed -i "s/;date.timezone =/date.timezone = America\/Sao_Paulo/" /etc/php/*/apach
 sed -i "s/;date.timezone =/date.timezone = America\/Sao_Paulo/" /etc/php/*/cli/php.ini
 
 # Configura Apache
-if [ ! -f "/etc/apache2/sites-available/librenms.conf" ]; then
-    cat > /etc/apache2/sites-available/librenms.conf <<EOL
+# Garante que o diretório exista
+mkdir -p /etc/apache2/sites-available
+
+# Cria ou sobrescreve explicitamente a configuração correta do site LibreNMS
+cat <<'EOL' > /etc/apache2/sites-available/librenms.conf
 <VirtualHost *:80>
   DocumentRoot /opt/librenms/html/
   ServerName librenms.example.com
@@ -152,24 +182,30 @@ if [ ! -f "/etc/apache2/sites-available/librenms.conf" ]; then
     Options FollowSymLinks MultiViews
   </Directory>
 
-  ErrorLog \${APACHE_LOG_DIR}/librenms_error.log
-  CustomLog \${APACHE_LOG_DIR}/librenms_access.log combined
+  ErrorLog ${APACHE_LOG_DIR}/librenms_error.log
+  CustomLog ${APACHE_LOG_DIR}/librenms_access.log combined
 </VirtualHost>
 EOL
 
-    a2ensite librenms.conf
-    a2enmod rewrite proxy_fcgi setenvif env headers
-    systemctl restart apache2
-else
-    echo "Configuração Apache já existente. Ignorando."
-fi
+# Desativa site padrão e ativa explicitamente o site LibreNMS
+a2dissite 000-default.conf
+a2ensite librenms.conf
 
-if [ -f "/opt/librenms/misc/librenms.nonroot.cron" ]; then
-    cp /opt/librenms/misc/librenms.nonroot.cron /etc/cron.d/librenms
-    chmod 644 /etc/cron.d/librenms
-    chown root:root /etc/cron.d/librenms
+# Ativa módulos essenciais para o LibreNMS
+a2enmod rewrite headers env proxy_fcgi setenvif
+
+# Reinicia Apache para aplicar imediatamente
+systemctl restart apache2
+
+# Validação imediata para garantir que LibreNMS esteja realmente acessível
+sleep 2
+if curl -s http://127.0.0.1 | grep -q "LibreNMS"; then
+    echo "✅ LibreNMS configurado e acessível com sucesso!"
 else
-    echo "❌ ERRO: librenms.nonroot.cron ainda não encontrado. Verifique logs do composer."
+    echo "❌ Erro: LibreNMS ainda inacessível após configuração!"
+    apache2ctl -S
+    ls -l /etc/apache2/sites-available/
+    exit 1
 fi
 
 
@@ -274,40 +310,65 @@ echo "Instalação do LibreNMS concluída. Acesse via navegador o endereço IP o
 
 
 # Função para desinstalação
+# Função otimizada para desinstalação completa do LibreNMS
 uninstall_librenms() {
-    systemctl stop librenms-scheduler.timer
-    systemctl disable librenms-scheduler.timer
+    echo "⚙️ Iniciando desinstalação completa do LibreNMS..."
+
+    # Para serviços do LibreNMS
+    systemctl stop librenms-scheduler.timer librenms-scheduler.service >/dev/null 2>&1
+    systemctl disable librenms-scheduler.timer librenms-scheduler.service >/dev/null 2>&1
     rm -f /etc/systemd/system/librenms-scheduler.*
+
+    # Recarrega serviços
     systemctl daemon-reload
 
-    a2dissite librenms.conf
-    rm -f /etc/apache2/sites-available/librenms.conf
-    systemctl restart apache2
+    # Remove configurações Apache do LibreNMS
+    if [ -f "/etc/apache2/sites-available/librenms.conf" ]; then
+        a2dissite librenms.conf >/dev/null 2>&1
+        rm -f /etc/apache2/sites-available/librenms.conf
+        systemctl restart apache2
+    fi
 
+    # Remove cron e logrotate
     rm -f /etc/cron.d/librenms
     rm -f /etc/logrotate.d/librenms
 
+    # Restaura configuração original do SNMP, se backup existir
     if [ -f "/etc/snmp/snmpd.conf.bkp" ]; then
         mv /etc/snmp/snmpd.conf.bkp /etc/snmp/snmpd.conf
+        systemctl restart snmpd
     fi
-    systemctl restart snmpd
 
+    # Remove scripts e links simbólicos relacionados ao LibreNMS
     rm -f /usr/local/bin/lnms
     rm -f /etc/bash_completion.d/lnms-completion.bash
 
+    # Remove totalmente banco de dados e usuário do LibreNMS do MySQL/MariaDB
     mysql -u root <<EOF
 DROP DATABASE IF EXISTS librenms;
 DROP USER IF EXISTS 'librenms'@'localhost';
 FLUSH PRIVILEGES;
 EOF
 
-    deluser --remove-home librenms
-    groupdel librenms
+    # Remove usuário e grupo librenms
+    if id "librenms" >/dev/null 2>&1; then
+        deluser --remove-home librenms >/dev/null 2>&1
+    fi
 
+    if getent group librenms >/dev/null 2>&1; then
+        groupdel librenms >/dev/null 2>&1
+    fi
+
+    # Remove completamente diretório de instalação do LibreNMS
     rm -rf /opt/librenms
 
-    echo "✅ LibreNMS foi completamente desinstalado."
+    # Limpa resíduos adicionais possivelmente deixados
+    find /var/log -name "*librenms*" -exec rm -rf {} \; >/dev/null 2>&1
+    find /tmp -name "*librenms*" -exec rm -rf {} \; >/dev/null 2>&1
+
+    echo "✅ LibreNMS foi completamente removido do sistema."
 }
+
 
 
 # Executa ação
