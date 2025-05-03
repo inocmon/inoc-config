@@ -54,22 +54,24 @@ apt-get -yq -o Dpkg::Options::="--force-confdef" \
 # Instala dependências básicas
 apt install -y software-properties-common curl apt-transport-https ca-certificates gnupg
 
+# Instala pacotes necessários do Python
+apt install -y python3 python3-pip python3-venv python3-dev python3-setuptools python3-wheel
 
 # Instala PHP 8.2
 add-apt-repository -y ppa:ondrej/php
 apt update
 apt install -y apache2
+apt install -y  snmp snmpd rrdtool fping git
 apt install -y software-properties-common
 apt install composer -y
 apt install mysql-server mysql-client -y
-mysql_secure_installation
+apt install -y acl
+#mysql_secure_installation
 add-apt-repository -y ppa:ondrej/php
-apt install -y snmp snmpd php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
+apt install -y php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
 
 
-update-alternatives --set php /usr/bin/php8.2
-a2dismod php8.1
-a2enmod php8.2
+a2enmod php
 systemctl restart apache2
 
 
@@ -92,12 +94,16 @@ chmod 770 /opt/librenms
 setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/
 setfacl -R -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/
 
-# Instala dependências PHP
+# Garante que composer está disponível para usuário librenms
+ln -sf /usr/bin/composer /opt/librenms/composer
+chown librenms:librenms /opt/librenms/composer
+
+# Instala dependências PHP com usuário librenms
 if [ ! -d "/opt/librenms/vendor" ]; then
-    su - librenms -c "/usr/bin/composer install --no-dev"
+    su - librenms -c "/opt/librenms/composer install --no-dev --no-interaction"
 else
     echo "Dependências já existem, atualizando..."
-    su - librenms -c "/usr/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader"
+    su - librenms -c "/opt/librenms/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader"
 fi
 
 # Verifica se o banco de dados já existe
@@ -143,13 +149,14 @@ else
     echo "Configuração Apache já existente. Ignorando."
 fi
 
-if [ -f "/opt/librenms/librenms.nonroot.cron" ]; then
-    cp /opt/librenms/librenms.nonroot.cron /etc/cron.d/librenms
+if [ -f "/opt/librenms/misc/librenms.nonroot.cron" ]; then
+    cp /opt/librenms/misc/librenms.nonroot.cron /etc/cron.d/librenms
     chmod 644 /etc/cron.d/librenms
     chown root:root /etc/cron.d/librenms
 else
     echo "❌ ERRO: librenms.nonroot.cron ainda não encontrado. Verifique logs do composer."
 fi
+
 
 
 
@@ -184,7 +191,9 @@ systemctl enable librenms-scheduler.timer
 systemctl start librenms-scheduler.timer
 
 #
+[ -L /usr/local/bin/lnms ] && rm /usr/local/bin/lnms
 ln -s /opt/librenms/lnms /usr/local/bin/lnms
+
 cp /opt/librenms/misc/lnms-completion.bash /etc/bash_completion.d/
 
 #incluir librenms no grupo e sjusta permissões
@@ -215,8 +224,8 @@ chown root:root /etc/cron.d/librenms
 systemctl restart cron
 
 
-# Instala pacotes necessários do Python
-apt install -y python3 python3-pip python3-venv python3-dev python3-setuptools python3-wheel
+
+
 
 # Instala dependências Python do LibreNMS como usuário 'librenms'
 su - librenms -c "/usr/bin/pip3 install --user -r /opt/librenms/requirements.txt"
