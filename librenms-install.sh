@@ -61,18 +61,14 @@ apt install -y cronic
 # Instala PHP
 add-apt-repository -y ppa:ondrej/php
 apt update
-apt install -y apache2
-apt install -y  snmp snmpd rrdtool fping git
-apt install -y software-properties-common
-apt install composer -y
-apt install mysql-server mysql-client -y
-apt install -y acl
-#mysql_secure_installation
-add-apt-repository -y ppa:ondrej/php
-apt install -y php php-cli php-common php-curl php-fpm php-gd php-gmp php-mbstring php-mysql php-snmp php-xml php-zip libapache2-mod-php
+
+# Instala explicitamente versão PHP 8.3
+apt install -y apache2 snmp snmpd rrdtool fping git software-properties-common composer mysql-server mysql-client acl
+apt install -y php8.3 php8.3-cli php8.3-common php8.3-curl php8.3-fpm php8.3-gd php8.3-gmp php8.3-mbstring php8.3-mysql php8.3-snmp php8.3-xml php8.3-zip libapache2-mod-php8.3
 
 apt purge -y php*-fpm
-apt install -y libapache2-mod-php
+apt install -y libapache2-mod-php8.3
+
 
 PHP_MODULE=$(basename $(find /usr/lib/apache2/modules/ -name "libphp*.so" | sort -r | head -n1) .so | sed 's/lib//')
 
@@ -116,11 +112,11 @@ chown -R librenms:librenms /opt/librenms
 
 # Certifica-se de que composer esteja instalado corretamente
 apt install -y composer unzip
-
+composer self-update --quiet --no-interaction
 # Executa composer com saída para log e verificação automática
 COMPOSER_LOG="/tmp/librenms_composer.log"
 
-su - librenms -c "/usr/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader &> ${COMPOSER_LOG}"
+su - librenms -c "/usr/bin/composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader 2>/dev/null &> ${COMPOSER_LOG}"
 
 # Verifica automaticamente se librenms.nonroot.cron foi criado
 if [ -f "/opt/librenms/misc/librenms.nonroot.cron" ]; then
@@ -169,33 +165,99 @@ sed -i "s/;date.timezone =/date.timezone = America\/Sao_Paulo/" /etc/php/*/cli/p
 # Garante que o diretório exista
 mkdir -p /etc/apache2/sites-available
 
-# Cria ou sobrescreve explicitamente a configuração correta do site LibreNMS
-cat <<'EOL' > /etc/apache2/sites-available/librenms.conf
-<VirtualHost *:80>
+
+
+
+# Adiciona safe directory ao git para resolver "dubious ownership"
+su - librenms -c "git config --global --add safe.directory /opt/librenms"
+
+# Limpa e atualiza repositório git
+su - librenms -c "git -C /opt/librenms reset --hard"
+su - librenms -c "git -C /opt/librenms clean -fd"
+su - librenms -c "git -C /opt/librenms checkout master"
+su - librenms -c "git -C /opt/librenms pull --quiet"
+
+
+# Restaura propriedade correta para todo o diretório do LibreNMS
+chown -R librenms:librenms /opt/librenms
+# Limpa cache do composer primeiro
+su - librenms -c "composer clear-cache"
+
+# Instala dependências via composer com validação única
+if ! su - librenms -c "composer install --no-dev --no-interaction --prefer-dist --optimize-autoloader"; then
+    echo "❌ Falha crítica ao executar o composer. Abortando."
+    exit 1
+fi
+
+
+# NOVA ABORDAGEM GARANTIDA PARA CONFIGURAÇÃO APACHE
+LIBRENMS_CONF_PATH="/etc/apache2/sites-available/librenms.conf"
+
+
+echo "#####################################################"
+echo "criando arquivo..."
+echo "#####################################################"
+echo "#####################################################"
+echo "#####################################################"
+echo "#####################################################"
+echo "<VirtualHost *:80>
   DocumentRoot /opt/librenms/html/
-  ServerName librenms.example.com
+  ServerName ${SERVER_IP}
 
   AllowEncodedSlashes NoDecode
-  <Directory "/opt/librenms/html/">
+  <Directory \"/opt/librenms/html/\">
     Require all granted
     AllowOverride All
     Options FollowSymLinks MultiViews
   </Directory>
 
-  ErrorLog ${APACHE_LOG_DIR}/librenms_error.log
-  CustomLog ${APACHE_LOG_DIR}/librenms_access.log combined
-</VirtualHost>
-EOL
+  ErrorLog \${APACHE_LOG_DIR}/librenms_error.log
+  CustomLog \${APACHE_LOG_DIR}/librenms_access.log combined
+</VirtualHost>"
 
-# Desativa site padrão e ativa explicitamente o site LibreNMS
-a2dissite 000-default.conf
-a2ensite librenms.conf
+# Sempre recriar explicitamente o arquivo librenms.conf
+echo "<VirtualHost *:80>
+  DocumentRoot /opt/librenms/html/
+  ServerName ${SERVER_IP}
 
-# Ativa módulos essenciais para o LibreNMS
-a2enmod rewrite headers env proxy_fcgi setenvif
+  AllowEncodedSlashes NoDecode
+  <Directory \"/opt/librenms/html/\">
+    Require all granted
+    AllowOverride All
+    Options FollowSymLinks MultiViews
+  </Directory>
 
-# Reinicia Apache para aplicar imediatamente
+  ErrorLog \${APACHE_LOG_DIR}/librenms_error.log
+  CustomLog \${APACHE_LOG_DIR}/librenms_access.log combined
+</VirtualHost>" > "${LIBRENMS_CONF_PATH}"
+
+# Garantia total que o arquivo existe ou aborta
+if [ -f "${LIBRENMS_CONF_PATH}" ]; then
+    echo "✅ librenms.conf criado definitivamente!"
+else
+    echo "❌ Falha definitiva ao criar librenms.conf"
+    exit 1
+fi
+
+# Desativa o site default explicitamente e ativa librenms
+a2dissite 000-default.conf >/dev/null 2>&1 || true
+a2ensite librenms.conf || { echo "❌ Erro ao ativar librenms.conf"; exit 1; }
+
+# Reinicia o apache de forma segura
 systemctl restart apache2
+
+# Verifica definitiva da configuração ativa do Apache
+sleep 2
+if apache2ctl -S | grep -q "librenms.conf"; then
+    echo "✅ librenms.conf ativo definitivamente!"
+else
+    echo "❌ librenms.conf não está ativo após instalação!"
+    exit 1
+fi
+
+
+
+
 
 # Validação imediata para garantir que LibreNMS esteja realmente acessível
 sleep 2
@@ -284,21 +346,10 @@ su - librenms -c "/usr/bin/pip3 install --user -r /opt/librenms/requirements.txt
 
 
 
-# Adiciona safe directory ao git para resolver "dubious ownership"
-su - librenms -c "git config --global --add safe.directory /opt/librenms"
-
-# Limpa e atualiza repositório git
-su - librenms -c "git -C /opt/librenms reset --hard"
-su - librenms -c "git -C /opt/librenms clean -fd"
-su - librenms -c "git -C /opt/librenms checkout master"
-su - librenms -c "git -C /opt/librenms pull --quiet"
-
-
-# Restaura propriedade correta para todo o diretório do LibreNMS
-chown -R librenms:librenms /opt/librenms
 setfacl -d -m g::rwx /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
 chmod -R ug=rwX /opt/librenms/rrd /opt/librenms/logs /opt/librenms/bootstrap/cache/ /opt/librenms/storage/
 
+usermod -a -G librenms www-data
 
 # Reinicia Apache
 systemctl restart apache2
@@ -367,6 +418,12 @@ EOF
     find /tmp -name "*librenms*" -exec rm -rf {} \; >/dev/null 2>&1
 
     echo "✅ LibreNMS foi completamente removido do sistema."
+
+  # Validação final após desinstalação
+  [ -d /opt/librenms ] && echo "❌ Diretório /opt/librenms ainda existe!" || echo "✅ Diretório removido com sucesso"
+  id librenms >/dev/null 2>&1 && echo "❌ Usuário librenms ainda existe!" || echo "✅ Usuário removido com sucesso"
+  getent group librenms >/dev/null 2>&1 && echo "❌ Grupo librenms ainda existe!" || echo "✅ Grupo removido com sucesso"
+
 }
 
 
