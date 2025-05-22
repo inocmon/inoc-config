@@ -1,11 +1,12 @@
 #!/bin/bash
 
 # Processando argumentos com getopt
-OPTIONS=$(getopt -o '' --long username:,apikey:,refresh-certs-force -- "$@")
+OPTIONS=$(getopt -o '' --long username:,apikey:,proxyid:,refresh-certs-force -- "$@")
 eval set -- "$OPTIONS"
 
 userName=""
 apiKey=""
+proxyId=""
 REFRESH_CERTS_FORCE=false
 
 while true; do
@@ -16,6 +17,10 @@ while true; do
       ;;
     --apikey)
       apiKey="$2"
+      shift 2
+      ;;
+    --proxyid)
+      proxyId="$2"
       shift 2
       ;;
     --refresh-certs-force)
@@ -35,7 +40,7 @@ done
 
 # Validação de argumentos obrigatórios
 if [ -z "$userName" ] || [ -z "$apiKey" ]; then
-    echo "Uso: $0 --username Nome_do_usuario --apikey 12345 [--refresh-certs-force]"
+    echo "Uso: $0 --username Nome_do_usuario --apikey 12345 [--refresh-certs-force] [--proxyid seu_proxyid]"
     exit 1
 fi
 
@@ -83,6 +88,31 @@ if [ "$REFRESH_CERTS_FORCE" = true ] || [ ! -f /opt/inoc-config/certs/server.key
 else
     echo "O certificado SSL já existe. Utilize '--refresh-certs-force' para gerar um novo."
 fi
+
+####
+#gerando certificados
+# Gerando certificados Let's Encrypt apenas se proxyId for fornecido e certificado não existir
+if [ -n "$proxyId" ]; then
+    if [ ! -d "/etc/letsencrypt/live/${proxyId}.inocmon.com.br" ]; then
+        systemctl stop apache2 || systemctl stop nginx
+
+        snap install --classic certbot
+        yes | certbot certonly --standalone -d ${proxyId}.inocmon.com.br
+
+        echo "SSL_KEY_PATH=/etc/letsencrypt/live/${proxyId}.inocmon.com.br/privkey.pem" >> /opt/inoc-config/.env
+        echo "SSL_CERT_PATH=/etc/letsencrypt/live/${proxyId}.inocmon.com.br/fullchain.pem" >> /opt/inoc-config/.env
+
+        certbot renew --dry-run
+        certbot certificates
+
+        systemctl start apache2 || systemctl start nginx
+    else
+        echo "Certificado para ${proxyId}.inocmon.com.br já existe."
+    fi
+else
+    echo "Parâmetro --proxyid não fornecido. Certificado Let's Encrypt não gerado."
+fi
+#fim dos certificados
 
 # Copiar arquivos e configuração do serviço
 chmod +x /opt/inoc-config/inoc-node-terminal
