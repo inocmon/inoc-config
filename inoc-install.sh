@@ -93,25 +93,51 @@ fi
 #gerando certificados
 # Gerando certificados Let's Encrypt apenas se proxyId for fornecido e certificado não existir
 if [ -n "$proxyId" ]; then
-    if [ ! -d "/etc/letsencrypt/live/${proxyId}.inocmon.com.br" ]; then
-        systemctl stop apache2 || systemctl stop nginx
+    DOMAIN="${proxyId}.inocmon.com.br"
 
-        snap install --classic certbot
-        yes | certbot certonly --standalone -d ${proxyId}.inocmon.com.br
+    if [ ! -d "/etc/letsencrypt/live/${DOMAIN}" ]; then
 
-        echo "SSL_KEY_PATH=/etc/letsencrypt/live/${proxyId}.inocmon.com.br/privkey.pem" >> /opt/inoc-config/.env
-        echo "SSL_CERT_PATH=/etc/letsencrypt/live/${proxyId}.inocmon.com.br/fullchain.pem" >> /opt/inoc-config/.env
+        # Para serviços web se estiverem rodando
+        systemctl stop apache2 >/dev/null 2>&1 || true
+        systemctl stop nginx >/dev/null 2>&1 || true
 
+        # Instala certbot se não existir
+        if ! command -v certbot &> /dev/null; then
+            snap install --classic certbot
+            ln -sf /snap/bin/certbot /usr/bin/certbot
+        fi
+
+        # Solicita certificado com parâmetros não-interativos
+        certbot certonly --standalone --non-interactive --agree-tos \
+            -m "seuemail@exemplo.com" \
+            -d "${DOMAIN}"
+
+        # Verifica se o certificado foi gerado corretamente
+        if [ -f "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" ]; then
+            echo "SSL_KEY_PATH=/etc/letsencrypt/live/${DOMAIN}/privkey.pem" >> /opt/inoc-config/.env
+            echo "SSL_CERT_PATH=/etc/letsencrypt/live/${DOMAIN}/fullchain.pem" >> /opt/inoc-config/.env
+        else
+            echo "Falha ao gerar o certificado para ${DOMAIN}."
+            exit 1
+        fi
+
+        # Testa a renovação automática (dry-run)
         certbot renew --dry-run
+
+        # Lista certificados para confirmação visual
         certbot certificates
 
-        systemctl start apache2 || systemctl start nginx
+        # Reinicia serviços web caso tenham sido parados
+        systemctl start apache2 >/dev/null 2>&1 || true
+        systemctl start nginx >/dev/null 2>&1 || true
+
     else
-        echo "Certificado para ${proxyId}.inocmon.com.br já existe."
+        echo "Certificado para ${DOMAIN} já existe."
     fi
 else
     echo "Parâmetro --proxyid não fornecido. Certificado Let's Encrypt não gerado."
 fi
+
 #fim dos certificados
 
 # Copiar arquivos e configuração do serviço
