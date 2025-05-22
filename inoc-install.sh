@@ -109,7 +109,7 @@ if [ -n "$proxyId" ]; then
 
         # Solicita certificado com parâmetros não-interativos
         certbot certonly --standalone --non-interactive --agree-tos \
-            -m "seuemail@exemplo.com" \
+            -m "rinaldopvaz@gmail.com" \
             -d "${DOMAIN}"
 
         # Verifica se o certificado foi gerado corretamente
