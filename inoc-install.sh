@@ -44,6 +44,8 @@ if [ -z "$userName" ] || [ -z "$apiKey" ]; then
     exit 1
 fi
 
+apt-get update
+
 # Cria diretórios se não existirem
 mkdir -p rsa logs
 [ ! -f .env ] && touch .env
@@ -92,6 +94,8 @@ fi
 ####
 #gerando certificados
 # Gerando certificados Let's Encrypt apenas se proxyId for fornecido e certificado não existir
+
+# Gerando certificados Let's Encrypt apenas se proxyId for fornecido e certificado não existir
 if [ -n "$proxyId" ]; then
     DOMAIN="${proxyId}.inocmon.com.br"
 
@@ -101,15 +105,23 @@ if [ -n "$proxyId" ]; then
         systemctl stop apache2 >/dev/null 2>&1 || true
         systemctl stop nginx >/dev/null 2>&1 || true
 
-        # Instala certbot se não existir
-        if ! command -v certbot &> /dev/null; then
-            snap install --classic certbot
+        # Instala certbot apenas se não estiver instalado
+        if ! command -v certbot >/dev/null 2>&1; then
+            echo "Instalando certbot via snap (timeout após 120s)..."
+            timeout 120 snap install --classic certbot
             ln -sf /snap/bin/certbot /usr/bin/certbot
+
+            if ! command -v certbot >/dev/null 2>&1; then
+                echo "Falha ao instalar certbot."
+                exit 1
+            fi
+        else
+            echo "Certbot já está instalado."
         fi
 
         # Solicita certificado com parâmetros não-interativos
         certbot certonly --standalone --non-interactive --agree-tos \
-            -m "rinaldopvaz@gmail.com" \
+            -m "seuemail@exemplo.com" \
             -d "${DOMAIN}"
 
         # Verifica se o certificado foi gerado corretamente
@@ -137,7 +149,7 @@ if [ -n "$proxyId" ]; then
 else
     echo "Parâmetro --proxyid não fornecido. Certificado Let's Encrypt não gerado."
 fi
-
+9
 #fim dos certificados
 
 # Copiar arquivos e configuração do serviço
