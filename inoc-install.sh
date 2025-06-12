@@ -97,10 +97,9 @@ fi
 
 # Gerando certificados Let's Encrypt apenas se proxyId for fornecido e certificado não existir
 if [ -n "$proxyId" ]; then
-    DOMAIN="${proxyId}.inocmon.com.br"
+    DOMAIN="proxy-${proxyId}.inocmon.com.br"
 
-    if [ ! -d "/etc/letsencrypt/live/${DOMAIN}" ]; then
-
+    if [ "$REFRESH_CERTS_FORCE" = true ] || [ ! -d "/etc/letsencrypt/live/${DOMAIN}" ]; then
         # Para serviços web se estiverem rodando
         systemctl stop apache2 >/dev/null 2>&1 || true
         systemctl stop nginx >/dev/null 2>&1 || true
@@ -125,13 +124,30 @@ if [ -n "$proxyId" ]; then
             -d "${DOMAIN}"
 
         # Verifica se o certificado foi gerado corretamente
+        ENV_FILE="/opt/inoc-config/.env"
+
         if [ -f "/etc/letsencrypt/live/${DOMAIN}/privkey.pem" ]; then
-            echo "SSL_KEY_PATH=/etc/letsencrypt/live/${DOMAIN}/privkey.pem" >> /opt/inoc-config/.env
-            echo "SSL_CERT_PATH=/etc/letsencrypt/live/${DOMAIN}/fullchain.pem" >> /opt/inoc-config/.env
+            KEY_PATH="/etc/letsencrypt/live/${DOMAIN}/privkey.pem"
+            CERT_PATH="/etc/letsencrypt/live/${DOMAIN}/fullchain.pem"
+
+            # Atualiza ou insere SSL_KEY_PATH
+            if grep -q "^SSL_KEY_PATH=" "$ENV_FILE"; then
+                sed -i "s|^SSL_KEY_PATH=.*|SSL_KEY_PATH=${KEY_PATH}|" "$ENV_FILE"
+            else
+                echo "SSL_KEY_PATH=${KEY_PATH}" >> "$ENV_FILE"
+            fi
+
+            # Atualiza ou insere SSL_CERT_PATH
+            if grep -q "^SSL_CERT_PATH=" "$ENV_FILE"; then
+                sed -i "s|^SSL_CERT_PATH=.*|SSL_CERT_PATH=${CERT_PATH}|" "$ENV_FILE"
+            else
+                echo "SSL_CERT_PATH=${CERT_PATH}" >> "$ENV_FILE"
+            fi
         else
             echo "Falha ao gerar o certificado para ${DOMAIN}."
             exit 1
         fi
+
 
         # Testa a renovação automática (dry-run)
         certbot renew --dry-run
@@ -149,7 +165,6 @@ if [ -n "$proxyId" ]; then
 else
     echo "Parâmetro --proxyid não fornecido. Certificado Let's Encrypt não gerado."
 fi
-9
 #fim dos certificados
 
 # Copiar arquivos e configuração do serviço

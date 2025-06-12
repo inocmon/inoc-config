@@ -114,6 +114,10 @@ SHELL=/bin/bash
 */5 * * * * librenms php /opt/librenms/alerts.php
 */5 * * * * librenms /opt/librenms/venv/bin/python3 /opt/librenms/services-wrapper.py 1
 */5 * * * * librenms php /opt/librenms/discovery.php -h new
+# Discovery completo diário
+0 2 * * * librenms php /opt/librenms/discovery.php -h all >> /dev/null 2>&1
+# Validação diária
+0 3 * * * librenms php /opt/librenms/validate.php >> /opt/librenms/logs/validate.log 2>&1
 EOF
 
 systemctl restart cron
