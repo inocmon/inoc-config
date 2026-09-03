@@ -6,7 +6,8 @@
   "publication_kind": "authoritative-server-baseline",
   "build_commit_reported": null,
   "stable_artifact": {
-    "path": "inoc-node-terminal",
-    "sha256": "1bdae445b97bdfb080134f556eefae7c6760f44f1e24f00a620f8762930b423f"
+    "version": "1.1beta33",
+    "path": "inoc-node-terminal-v1dot1beta33",
+    "sha256": "f86e555cd2a27c75d95c204dbde4e11f17188785c0e50f6e26809d8ea09e081f"
   }
 }
