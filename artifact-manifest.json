@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "artifact_repository": "inocmon/inoc-config",
+  "source_repository": "inocmon/inoc-config-project",
+  "migration_source_commit": "d4b7825da979d976a7511cd77ffc53c74f9ebbce",
+  "publication_kind": "authoritative-server-baseline",
+  "build_commit_reported": null,
+  "stable_artifact": {
+    "path": "inoc-node-terminal",
+    "sha256": "1bdae445b97bdfb080134f556eefae7c6760f44f1e24f00a620f8762930b423f"
+  }
+}
