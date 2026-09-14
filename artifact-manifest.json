@@ -9,5 +9,12 @@
     "version": "1.1beta33",
     "path": "inoc-node-terminal-v1dot1beta33",
     "sha256": "f86e555cd2a27c75d95c204dbde4e11f17188785c0e50f6e26809d8ea09e081f"
+  },
+  "pon_artifact": {
+    "version": "v2026.09.14-rev9-pon-shared",
+    "manifest": "pon/v2026.09.14-rev9-pon-shared/manifest.json",
+    "source_commit": "7dd4de0af8ed3613c2c1e896f7bbc53fd7b452e8",
+    "path": "pon/v2026.09.14-rev9-pon-shared/inoc-config4",
+    "sha256": "0320591f75f1a18a7ec202fa2d4d692aaa3bf79995c085b84c15e993cf246371"
   }
 }

@@ -1,0 +1,17 @@
+{
+  "version": "v2026.09.14-rev9-pon-shared",
+  "source_repository": "inocmon/inoc-config-project",
+  "source_commit": "7dd4de0af8ed3613c2c1e896f7bbc53fd7b452e8",
+  "builder_image": "sha256:ffd829b1b4c073bf0ac73dc9ae685ae054d7765e62a9b18fb55fb486f28d825d",
+  "python": "3.10.12",
+  "goos": "linux",
+  "goarch": "amd64",
+  "built_at": "2026-09-14T02:51:26.027266+00:00",
+  "binary_file": "inoc-config4",
+  "sha256": "0320591f75f1a18a7ec202fa2d4d692aaa3bf79995c085b84c15e993cf246371",
+  "readonly_contract": {
+    "version": "rev9-pon-v1",
+    "policy_sha256": "2881a6faff762ce8c0bece1d2609d15e226a09eb286e4ce1dcbea3cc14a95964",
+    "confirmations": "reject"
+  }
+}
