@@ -16,5 +16,12 @@
     "source_commit": "7dd4de0af8ed3613c2c1e896f7bbc53fd7b452e8",
     "path": "pon/v2026.09.14-rev9-pon-shared/inoc-config4",
     "sha256": "0320591f75f1a18a7ec202fa2d4d692aaa3bf79995c085b84c15e993cf246371"
+  },
+  "datacom_config_prompt_fix": {
+    "version": "v2026.09.20-datacom-config-prompt",
+    "source_commit": "55694c6",
+    "path": "inoc-config4-beta13-datacom-prompt",
+    "sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
+    "rollback_path": "inoc-config4-beta13"
   }
 }
