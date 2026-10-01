@@ -1,0 +1,376 @@
+{
+  "at": "2026-10-01T00:53:15.266170+00:00",
+  "node_source_sha256": "53fe540643c9bfc8c467493cded30bb879669add8be944aef590b45c74014ecb",
+  "node_module_sha256": "f2a371bd40523e3df8bb05b19c2ba69a089b125554c1e641ee47d7cc2c0104a6",
+  "node_version": "1.1beta34",
+  "contract": {
+    "contract": "strict-batch-v1",
+    "stop_on_error": true,
+    "json_result": true,
+    "preserves_partial_output": true,
+    "binary_sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78"
+  },
+  "tls_verified": true,
+  "ssh_device": "virtual loopback only",
+  "real_network_writes": 0,
+  "cases": [
+    {
+      "case": "success",
+      "phpunit_exit_code": 0,
+      "received_commands": [
+        "configure",
+        "description \"MCP-TEST\"",
+        "exit all",
+        "show system information"
+      ],
+      "virtual_state": {
+        "received_commands": [
+          "configure",
+          "description \"MCP-TEST\"",
+          "exit all",
+          "show system information"
+        ],
+        "description": "MCP-TEST"
+      },
+      "mcp": {
+        "at": "2026-10-01T00:53:26+00:00",
+        "mode": "success",
+        "duration_ms": 9920,
+        "http_status": 200,
+        "response": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": {
+            "resultType": "complete",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"operation_id\":\"01a0f4f3-8bbe-71ee-a01b-41222fac4e07\",\"client_id\":\"a\",\"status\":\"completed\",\"result\":{\"status\":\"ok\",\"reason\":null,\"operation_id\":\"01a0f4f3-8bbe-71ee-a01b-41222fac4e07\",\"executor\":\"managed_terminal\",\"executor_version\":\"1.1beta34\",\"identity_verification\":\"backend_registry\",\"configuration_verified\":false,\"persistence_verified\":false,\"details\":{\"stage\":\"terminal_execution\",\"executed\":true,\"outcome_known\":true,\"retryable\":false},\"result\":{\"status\":\"ok\",\"target_count\":1,\"applied\":1,\"failed\":0,\"script_sha256\":\"28c0839dce1eddf70fd9584b44dff463c4783a2b552a36a7d67c360ad273cc6f\",\"targets\":[{\"status\":\"ok\",\"target\":{\"asset_type\":\"equipment\",\"equip_id\":\"r1\",\"hostname\":\"MCP-LAB\",\"routerid\":\"127.0.0.1\",\"protocol\":\"ssh\",\"port\":57929,\"vendor\":\"nokia\",\"family\":\"sros\"},\"executed\":true,\"requested_commands\":[\"configure\",\"description \\\"MCP-TEST\\\"\",\"exit all\",\"show system information\"],\"executed_commands\":[\"configure\",\"description \\\"MCP-TEST\\\"\",\"exit all\",\"show system information\"],\"command_results\":[{\"command\":\"configure\",\"ok\":true,\"error\":null,\"status\":\"completed\"},{\"command\":\"description \\\"MCP-TEST\\\"\",\"ok\":true,\"error\":null,\"status\":\"completed\"},{\"command\":\"exit all\",\"ok\":true,\"error\":null,\"status\":\"completed\"},{\"command\":\"show system information\",\"ok\":true,\"error\":null,\"status\":\"completed\"}],\"not_executed_commands\":null,\"stopped_on_error\":false,\"output\":\"A:MCP-LAB#configure\\nA:MCP-LAB>config#description \\\"MCP-TEST\\\"\\nConfiguration staged.\\nA:MCP-LAB>config#exit all\\nA:MCP-LAB#show system information\\nDescription : MCP-TEST\\nA:MCP-LAB#\",\"output_truncated\":false,\"failure_reason\":null}]},\"observed_at\":\"2026-09-30T21:53:26-03:00\",\"automatic_retry_allowed\":false,\"target\":{\"id\":\"r1\",\"asset_type\":\"equipment\",\"name\":\"MCP-LAB\",\"ip\":\"127.0.0.1\",\"ips\":[\"127.0.0.1\"],\"vendor\":\"nokia\",\"family\":\"sros\"},\"proxy\":{\"proxy_id\":\"p1\",\"name\":\"LOOPBACK-PROXY\",\"primary\":false,\"inoc_monitor_configured\":true,\"managed_terminal_configured\":true,\"prefer_managed_terminal\":true,\"control_plane_allowed\":true,\"reason\":\"configuration_matches\",\"transport\":\"managed_terminal\"},\"output_truncated\":false},\"started_at\":\"2026-09-30T21:53:16-03:00\",\"observed_at\":\"2026-09-30T21:53:26-03:00\",\"automatic_retry_allowed\":false,\"target\":{\"id\":\"r1\",\"asset_type\":\"equipment\",\"name\":\"MCP-LAB\",\"ip\":\"127.0.0.1\",\"ips\":[\"127.0.0.1\"],\"vendor\":\"nokia\",\"family\":\"sros\"},\"proxy\":{\"proxy_id\":\"p1\",\"name\":\"LOOPBACK-PROXY\",\"primary\":false,\"inoc_monitor_configured\":true,\"managed_terminal_configured\":true,\"prefer_managed_terminal\":true,\"control_plane_allowed\":true,\"reason\":\"configuration_matches\",\"transport\":\"managed_terminal\"}}"
+              }
+            ],
+            "isError": false,
+            "structuredContent": {
+              "operation_id": "01a0f4f3-8bbe-71ee-a01b-41222fac4e07",
+              "client_id": "a",
+              "status": "completed",
+              "result": {
+                "status": "ok",
+                "reason": null,
+                "operation_id": "01a0f4f3-8bbe-71ee-a01b-41222fac4e07",
+                "executor": "managed_terminal",
+                "executor_version": "1.1beta34",
+                "identity_verification": "backend_registry",
+                "configuration_verified": false,
+                "persistence_verified": false,
+                "details": {
+                  "stage": "terminal_execution",
+                  "executed": true,
+                  "outcome_known": true,
+                  "retryable": false
+                },
+                "result": {
+                  "status": "ok",
+                  "target_count": 1,
+                  "applied": 1,
+                  "failed": 0,
+                  "script_sha256": "28c0839dce1eddf70fd9584b44dff463c4783a2b552a36a7d67c360ad273cc6f",
+                  "targets": [
+                    {
+                      "status": "ok",
+                      "target": {
+                        "asset_type": "equipment",
+                        "equip_id": "r1",
+                        "hostname": "MCP-LAB",
+                        "routerid": "127.0.0.1",
+                        "protocol": "ssh",
+                        "port": 57929,
+                        "vendor": "nokia",
+                        "family": "sros"
+                      },
+                      "executed": true,
+                      "requested_commands": [
+                        "configure",
+                        "description \"MCP-TEST\"",
+                        "exit all",
+                        "show system information"
+                      ],
+                      "executed_commands": [
+                        "configure",
+                        "description \"MCP-TEST\"",
+                        "exit all",
+                        "show system information"
+                      ],
+                      "command_results": [
+                        {
+                          "command": "configure",
+                          "ok": true,
+                          "error": null,
+                          "status": "completed"
+                        },
+                        {
+                          "command": "description \"MCP-TEST\"",
+                          "ok": true,
+                          "error": null,
+                          "status": "completed"
+                        },
+                        {
+                          "command": "exit all",
+                          "ok": true,
+                          "error": null,
+                          "status": "completed"
+                        },
+                        {
+                          "command": "show system information",
+                          "ok": true,
+                          "error": null,
+                          "status": "completed"
+                        }
+                      ],
+                      "not_executed_commands": null,
+                      "stopped_on_error": false,
+                      "output": "A:MCP-LAB#configure\nA:MCP-LAB>config#description \"MCP-TEST\"\nConfiguration staged.\nA:MCP-LAB>config#exit all\nA:MCP-LAB#show system information\nDescription : MCP-TEST\nA:MCP-LAB#",
+                      "output_truncated": false,
+                      "failure_reason": null
+                    }
+                  ]
+                },
+                "observed_at": "2026-09-30T21:53:26-03:00",
+                "automatic_retry_allowed": false,
+                "target": {
+                  "id": "r1",
+                  "asset_type": "equipment",
+                  "name": "MCP-LAB",
+                  "ip": "127.0.0.1",
+                  "ips": [
+                    "127.0.0.1"
+                  ],
+                  "vendor": "nokia",
+                  "family": "sros"
+                },
+                "proxy": {
+                  "proxy_id": "p1",
+                  "name": "LOOPBACK-PROXY",
+                  "primary": false,
+                  "inoc_monitor_configured": true,
+                  "managed_terminal_configured": true,
+                  "prefer_managed_terminal": true,
+                  "control_plane_allowed": true,
+                  "reason": "configuration_matches",
+                  "transport": "managed_terminal"
+                },
+                "output_truncated": false
+              },
+              "started_at": "2026-09-30T21:53:16-03:00",
+              "observed_at": "2026-09-30T21:53:26-03:00",
+              "automatic_retry_allowed": false,
+              "target": {
+                "id": "r1",
+                "asset_type": "equipment",
+                "name": "MCP-LAB",
+                "ip": "127.0.0.1",
+                "ips": [
+                  "127.0.0.1"
+                ],
+                "vendor": "nokia",
+                "family": "sros"
+              },
+              "proxy": {
+                "proxy_id": "p1",
+                "name": "LOOPBACK-PROXY",
+                "primary": false,
+                "inoc_monitor_configured": true,
+                "managed_terminal_configured": true,
+                "prefer_managed_terminal": true,
+                "control_plane_allowed": true,
+                "reason": "configuration_matches",
+                "transport": "managed_terminal"
+              }
+            },
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "INOCMON",
+                "version": "0.11.0"
+              }
+            }
+          }
+        },
+        "replay_verified": true,
+        "persisted_operations": 1,
+        "firebase_writes": 0
+      }
+    },
+    {
+      "case": "cli_error",
+      "phpunit_exit_code": 0,
+      "received_commands": [
+        "configure",
+        "invalid command"
+      ],
+      "virtual_state": {
+        "received_commands": [
+          "configure",
+          "invalid command"
+        ]
+      },
+      "mcp": {
+        "at": "2026-10-01T00:53:34+00:00",
+        "mode": "cli_error",
+        "duration_ms": 4802,
+        "http_status": 200,
+        "response": {
+          "jsonrpc": "2.0",
+          "id": 1,
+          "result": {
+            "resultType": "complete",
+            "content": [
+              {
+                "type": "text",
+                "text": "{\"operation_id\":\"01a0f4f3-c02b-71a3-b69d-9c67b022468b\",\"client_id\":\"a\",\"status\":\"unknown\",\"result\":{\"status\":\"unknown\",\"reason\":\"device_cli_rejected\",\"operation_id\":\"01a0f4f3-c02b-71a3-b69d-9c67b022468b\",\"executor\":\"managed_terminal\",\"executor_version\":\"1.1beta34\",\"identity_verification\":\"backend_registry\",\"configuration_verified\":false,\"persistence_verified\":false,\"details\":{\"stage\":\"terminal_execution\",\"executed\":true,\"outcome_known\":false,\"retryable\":false},\"result\":{\"status\":\"unknown\",\"target_count\":1,\"applied\":0,\"failed\":1,\"script_sha256\":\"50cea3536c51fc1232d874d5e436465cb3f8db3591d5a4d6ccd01d107bb1d307\",\"targets\":[{\"status\":\"unknown\",\"target\":{\"asset_type\":\"equipment\",\"equip_id\":\"r1\",\"hostname\":\"MCP-LAB\",\"routerid\":\"127.0.0.1\",\"protocol\":\"ssh\",\"port\":41343,\"vendor\":\"nokia\",\"family\":\"sros\"},\"executed\":true,\"requested_commands\":[\"configure\",\"invalid command\",\"exit all\",\"show system information\"],\"executed_commands\":[\"configure\",\"invalid command\"],\"command_results\":[{\"command\":\"configure\",\"ok\":true,\"error\":null,\"status\":\"completed\"},{\"command\":\"invalid command\",\"ok\":false,\"error\":\"Error: Invalid parameter.\",\"status\":\"failed\"}],\"not_executed_commands\":[\"exit all\",\"show system information\"],\"stopped_on_error\":true,\"output\":\"A:MCP-LAB#configure\\nA:MCP-LAB>config#invalid command\\nError: Invalid parameter.\\nA:MCP-LAB>config#\",\"output_truncated\":false,\"failure_reason\":\"device_cli_rejected\"}]},\"observed_at\":\"2026-09-30T21:53:34-03:00\",\"automatic_retry_allowed\":false,\"target\":{\"id\":\"r1\",\"asset_type\":\"equipment\",\"name\":\"MCP-LAB\",\"ip\":\"127.0.0.1\",\"ips\":[\"127.0.0.1\"],\"vendor\":\"nokia\",\"family\":\"sros\"},\"proxy\":{\"proxy_id\":\"p1\",\"name\":\"LOOPBACK-PROXY\",\"primary\":false,\"inoc_monitor_configured\":true,\"managed_terminal_configured\":true,\"prefer_managed_terminal\":true,\"control_plane_allowed\":true,\"reason\":\"configuration_matches\",\"transport\":\"managed_terminal\"},\"output_truncated\":false},\"started_at\":\"2026-09-30T21:53:30-03:00\",\"observed_at\":\"2026-09-30T21:53:34-03:00\",\"automatic_retry_allowed\":false,\"target\":{\"id\":\"r1\",\"asset_type\":\"equipment\",\"name\":\"MCP-LAB\",\"ip\":\"127.0.0.1\",\"ips\":[\"127.0.0.1\"],\"vendor\":\"nokia\",\"family\":\"sros\"},\"proxy\":{\"proxy_id\":\"p1\",\"name\":\"LOOPBACK-PROXY\",\"primary\":false,\"inoc_monitor_configured\":true,\"managed_terminal_configured\":true,\"prefer_managed_terminal\":true,\"control_plane_allowed\":true,\"reason\":\"configuration_matches\",\"transport\":\"managed_terminal\"}}"
+              }
+            ],
+            "isError": true,
+            "structuredContent": {
+              "operation_id": "01a0f4f3-c02b-71a3-b69d-9c67b022468b",
+              "client_id": "a",
+              "status": "unknown",
+              "result": {
+                "status": "unknown",
+                "reason": "device_cli_rejected",
+                "operation_id": "01a0f4f3-c02b-71a3-b69d-9c67b022468b",
+                "executor": "managed_terminal",
+                "executor_version": "1.1beta34",
+                "identity_verification": "backend_registry",
+                "configuration_verified": false,
+                "persistence_verified": false,
+                "details": {
+                  "stage": "terminal_execution",
+                  "executed": true,
+                  "outcome_known": false,
+                  "retryable": false
+                },
+                "result": {
+                  "status": "unknown",
+                  "target_count": 1,
+                  "applied": 0,
+                  "failed": 1,
+                  "script_sha256": "50cea3536c51fc1232d874d5e436465cb3f8db3591d5a4d6ccd01d107bb1d307",
+                  "targets": [
+                    {
+                      "status": "unknown",
+                      "target": {
+                        "asset_type": "equipment",
+                        "equip_id": "r1",
+                        "hostname": "MCP-LAB",
+                        "routerid": "127.0.0.1",
+                        "protocol": "ssh",
+                        "port": 41343,
+                        "vendor": "nokia",
+                        "family": "sros"
+                      },
+                      "executed": true,
+                      "requested_commands": [
+                        "configure",
+                        "invalid command",
+                        "exit all",
+                        "show system information"
+                      ],
+                      "executed_commands": [
+                        "configure",
+                        "invalid command"
+                      ],
+                      "command_results": [
+                        {
+                          "command": "configure",
+                          "ok": true,
+                          "error": null,
+                          "status": "completed"
+                        },
+                        {
+                          "command": "invalid command",
+                          "ok": false,
+                          "error": "Error: Invalid parameter.",
+                          "status": "failed"
+                        }
+                      ],
+                      "not_executed_commands": [
+                        "exit all",
+                        "show system information"
+                      ],
+                      "stopped_on_error": true,
+                      "output": "A:MCP-LAB#configure\nA:MCP-LAB>config#invalid command\nError: Invalid parameter.\nA:MCP-LAB>config#",
+                      "output_truncated": false,
+                      "failure_reason": "device_cli_rejected"
+                    }
+                  ]
+                },
+                "observed_at": "2026-09-30T21:53:34-03:00",
+                "automatic_retry_allowed": false,
+                "target": {
+                  "id": "r1",
+                  "asset_type": "equipment",
+                  "name": "MCP-LAB",
+                  "ip": "127.0.0.1",
+                  "ips": [
+                    "127.0.0.1"
+                  ],
+                  "vendor": "nokia",
+                  "family": "sros"
+                },
+                "proxy": {
+                  "proxy_id": "p1",
+                  "name": "LOOPBACK-PROXY",
+                  "primary": false,
+                  "inoc_monitor_configured": true,
+                  "managed_terminal_configured": true,
+                  "prefer_managed_terminal": true,
+                  "control_plane_allowed": true,
+                  "reason": "configuration_matches",
+                  "transport": "managed_terminal"
+                },
+                "output_truncated": false
+              },
+              "started_at": "2026-09-30T21:53:30-03:00",
+              "observed_at": "2026-09-30T21:53:34-03:00",
+              "automatic_retry_allowed": false,
+              "target": {
+                "id": "r1",
+                "asset_type": "equipment",
+                "name": "MCP-LAB",
+                "ip": "127.0.0.1",
+                "ips": [
+                  "127.0.0.1"
+                ],
+                "vendor": "nokia",
+                "family": "sros"
+              },
+              "proxy": {
+                "proxy_id": "p1",
+                "name": "LOOPBACK-PROXY",
+                "primary": false,
+                "inoc_monitor_configured": true,
+                "managed_terminal_configured": true,
+                "prefer_managed_terminal": true,
+                "control_plane_allowed": true,
+                "reason": "configuration_matches",
+                "transport": "managed_terminal"
+              }
+            },
+            "_meta": {
+              "io.modelcontextprotocol/serverInfo": {
+                "name": "INOCMON",
+                "version": "0.11.0"
+              }
+            }
+          }
+        },
+        "replay_verified": true,
+        "persisted_operations": 1,
+        "firebase_writes": 0
+      }
+    }
+  ],
+  "compiled_node_artifact": {
+    "path": "/var/tmp/inocmon-node34-compiled-20261001/inoc-node-terminal-v1dot1beta34",
+    "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21"
+  }
+}

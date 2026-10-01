@@ -1,0 +1,26 @@
+{
+  "schema_version": 1,
+  "candidate_version": "1.1beta34",
+  "production_ready": false,
+  "built_at_utc": "2026-10-01T00:50:52.412Z",
+  "source_commit": "5ab69576b6fc110fd1e6c2efe8d598e4789c4cd6",
+  "target": "node18-linux-x64",
+  "platform": "linux",
+  "architecture": "amd64",
+  "toolchain": {
+    "node": "v22.22.1",
+    "npm": "9.2.0",
+    "pkg": "5.8.1",
+    "host": "Linux x86_64"
+  },
+  "artifact": {
+    "file": "inoc-node-terminal-v1dot1beta34",
+    "bytes": 52032894,
+    "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21"
+  },
+  "bytecode": true,
+  "bit_for_bit_reproducibility_verified": false,
+  "artifact_published": false,
+  "acceptance_passed": false,
+  "stable_artifact_changed": false
+}

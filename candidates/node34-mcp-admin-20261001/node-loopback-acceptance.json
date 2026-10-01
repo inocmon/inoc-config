@@ -1,0 +1,181 @@
+{
+  "at": "2026-10-01T00:53:15.171827+00:00",
+  "node_source_sha256": "53fe540643c9bfc8c467493cded30bb879669add8be944aef590b45c74014ecb",
+  "node_module_sha256": "f2a371bd40523e3df8bb05b19c2ba69a089b125554c1e641ee47d7cc2c0104a6",
+  "node_version": "1.1beta34",
+  "contract": {
+    "contract": "strict-batch-v1",
+    "stop_on_error": true,
+    "json_result": true,
+    "preserves_partial_output": true,
+    "binary_sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78"
+  },
+  "tls_verified": true,
+  "ssh_device": "virtual loopback only",
+  "real_network_writes": 0,
+  "cases": [
+    {
+      "case": "success",
+      "http_status": 200,
+      "duration_ms": 11192,
+      "received_commands": [
+        "configure",
+        "description \"MCP-TEST\"",
+        "exit all",
+        "show system information"
+      ],
+      "response": {
+        "execution_contract": "strict-batch-v1",
+        "strict_command_status": true,
+        "status": "ok",
+        "reason": null,
+        "output": "\r\nA:MCP-LAB#configure\r\nA:MCP-LAB>config#description \"MCP-TEST\"\r\nConfiguration staged.\r\nA:MCP-LAB>config#exit all\r\nA:MCP-LAB#show system information\r\nDescription : MCP-TEST\r\nA:MCP-LAB#",
+        "command_results": [
+          {
+            "command": "configure",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          },
+          {
+            "command": "description \"MCP-TEST\"",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          },
+          {
+            "command": "exit all",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          },
+          {
+            "command": "show system information",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          }
+        ],
+        "not_executed_commands": [],
+        "exit_code": 0,
+        "stopped_on_error": false,
+        "complete": true,
+        "executed_count": 4,
+        "requested_count": 4,
+        "executor_sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
+        "duration_ms": 11099,
+        "automatic_retry_allowed": false,
+        "partial_execution_possible": false
+      }
+    },
+    {
+      "case": "cli_error",
+      "http_status": 200,
+      "duration_ms": 4190,
+      "received_commands": [
+        "configure",
+        "invalid command"
+      ],
+      "response": {
+        "execution_contract": "strict-batch-v1",
+        "strict_command_status": true,
+        "status": "failed",
+        "reason": "device_cli_rejected",
+        "output": "\r\nA:MCP-LAB#configure\r\nA:MCP-LAB>config#invalid command\r\nError: Invalid parameter.\r\nA:MCP-LAB>config#",
+        "command_results": [
+          {
+            "command": "configure",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          },
+          {
+            "command": "invalid command",
+            "ok": false,
+            "error": "Error: Invalid parameter.",
+            "status": "failed"
+          }
+        ],
+        "not_executed_commands": [
+          "exit all",
+          "show system information"
+        ],
+        "exit_code": 1,
+        "stopped_on_error": true,
+        "complete": false,
+        "executed_count": 2,
+        "requested_count": 4,
+        "executor_sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
+        "duration_ms": 3928,
+        "automatic_retry_allowed": false,
+        "partial_execution_possible": true
+      }
+    },
+    {
+      "case": "disconnect",
+      "http_status": 200,
+      "duration_ms": 6923,
+      "received_commands": [
+        "configure",
+        "description \"MCP-TEST\""
+      ],
+      "response": {
+        "execution_contract": "strict-batch-v1",
+        "strict_command_status": true,
+        "status": "unknown",
+        "reason": "administrative_execution_outcome_unknown",
+        "output": "\r\nA:MCP-LAB#configure\r\nA:MCP-LAB>config#description \"MCP-TEST\"\r\nProcessing configuration\r\n",
+        "command_results": [
+          {
+            "command": "configure",
+            "ok": true,
+            "error": null,
+            "status": "completed"
+          }
+        ],
+        "not_executed_commands": null,
+        "exit_code": 1,
+        "stopped_on_error": false,
+        "complete": false,
+        "executed_count": 1,
+        "requested_count": 4,
+        "executor_sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
+        "duration_ms": 6830,
+        "automatic_retry_allowed": false,
+        "partial_execution_possible": true
+      }
+    },
+    {
+      "case": "legacy_read",
+      "http_status": 200,
+      "duration_ms": 3799,
+      "received_commands": [
+        "show system information"
+      ],
+      "response": {
+        "output": "A:MCP-LAB#show system information\r\nDescription : UNCHANGED\r\nA:MCP-LAB#"
+      }
+    }
+  ],
+  "compiled_node_artifact": {
+    "path": "/var/tmp/inocmon-node34-compiled-20261001/inoc-node-terminal-v1dot1beta34",
+    "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21"
+  },
+  "executor_identity_mismatch": {
+    "http_status": 409,
+    "response": {
+      "status": "rejected",
+      "executed": false,
+      "reason": "administrative_executor_changed",
+      "execution_contract": "strict-batch-v1"
+    }
+  },
+  "invalid_batch_rejected": {
+    "http_status": 422,
+    "response": {
+      "status": "rejected",
+      "executed": false,
+      "reason": "administrative_commands_invalid"
+    }
+  }
+}

@@ -23,5 +23,15 @@
     "path": "inoc-config4-beta13-datacom-prompt",
     "sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
     "rollback_path": "inoc-config4-beta13"
+  },
+  "development_candidates": {
+    "node34-mcp-admin-20261001": {
+      "version": "1.1beta34",
+      "production_ready": false,
+      "source_commit": "5ab69576b6fc110fd1e6c2efe8d598e4789c4cd6",
+      "path": "inoc-node-terminal-v1dot1beta34",
+      "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21",
+      "manifest": "candidates/node34-mcp-admin-20261001/manifest.json"
+    }
   }
 }
