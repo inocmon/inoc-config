@@ -33,5 +33,14 @@
       "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21",
       "manifest": "candidates/node34-mcp-admin-20261001/manifest.json"
     }
+  },
+  "remote_config_proxy_logs": {
+    "version": "v2026.10.02-remote-config-proxy-logs",
+    "production_ready": false,
+    "source_commit": "562263145cc04e7c2ca3ba61e1ab269d294f3d3c",
+    "path": "inoc-config4",
+    "sha256": "9cce200436a3f612ccd12a2147339e4645042476268110389c22348a7afbf8a4",
+    "manifest": "candidates/remote-config-proxy-logs-20261002/manifest.json",
+    "rollback_path": "inoc-config4-beta13-datacom-prompt"
   }
 }

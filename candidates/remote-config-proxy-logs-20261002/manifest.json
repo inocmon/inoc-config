@@ -1,0 +1,18 @@
+{
+  "version": "v2026.10.02-remote-config-proxy-logs",
+  "status": "compiled_dev_pending_homologation",
+  "production_ready": false,
+  "source_repository": "inocmon/inoc-config-project",
+  "source_commit": "562263145cc04e7c2ca3ba61e1ab269d294f3d3c",
+  "binary": "inoc-config4",
+  "binary_sha256": "9cce200436a3f612ccd12a2147339e4645042476268110389c22348a7afbf8a4",
+  "reported_version": "v4-beta13",
+  "builder_image_id": "sha256:ffd829b1b4c073bf0ac73dc9ae685ae054d7765e62a9b18fb55fb486f28d825d",
+  "build_command": "python -m PyInstaller --noconfirm --clean --distpath /output --workpath /tmp/build inoc-config4-beta13.spec",
+  "validation": {
+    "version": "PASS",
+    "readonly_contract": "PASS",
+    "browser_homologation": "pending"
+  },
+  "rollback_path": "inoc-config4-beta13-datacom-prompt"
+}
