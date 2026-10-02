@@ -1,7 +1,7 @@
 {
-  "version": "v2026.10.02-remote-config-proxy-logs",
-  "status": "compiled_dev_pending_homologation",
-  "production_ready": false,
+  "version": "v2026.10.02-remote-config-proxy-logs.1",
+  "status": "compiled_dev_validated_ready_for_promotion",
+  "production_ready": true,
   "source_repository": "inocmon/inoc-config-project",
   "source_commit": "562263145cc04e7c2ca3ba61e1ab269d294f3d3c",
   "binary": "inoc-config4",
@@ -10,9 +10,28 @@
   "builder_image_id": "sha256:ffd829b1b4c073bf0ac73dc9ae685ae054d7765e62a9b18fb55fb486f28d825d",
   "build_command": "python -m PyInstaller --noconfirm --clean --distpath /output --workpath /tmp/build inoc-config4-beta13.spec",
   "validation": {
-    "version": "PASS",
-    "readonly_contract": "PASS",
-    "browser_homologation": "pending"
+    "inoc_config4_version": "PASS",
+    "inoc_config4_readonly_contract": "PASS",
+    "inoc_config4_topology_allowlist": "PASS: only approved OSPF staging paths accepted",
+    "inoc_config4_forbidden_log_flags": "PASS",
+    "node_terminal_build": "PASS: pkg 5.8.1, node18-linux-x64",
+    "node_terminal_version": "PASS: 1.1beta35",
+    "node_terminal_api_ping": "PASS: HTTPS localhost fixture with disposable RSA/TLS keys, capability true",
+    "node_terminal_unit_tests": "PASS: 7 passed",
+    "real_device_writes": false
   },
-  "rollback_path": "inoc-config4-beta13-datacom-prompt"
+  "rollback_path": "inoc-config4-beta13-datacom-prompt",
+  "node_terminal": {
+    "version": "1.1beta35",
+    "source_repository": "inocmon/inoc-config-project",
+    "source_commit": "df0605f9e7ecdb456e7af78b253e2b680f0b9208",
+    "binary": "inoc-node-terminal-v1dot1beta35",
+    "binary_sha256": "b18fe2dd8332f3347b896622e7999c2714dc769a107577e35d0407641382b4a4",
+    "build_manifest": "node-terminal-beta35-build.json",
+    "validation": {
+      "unit_tests": "7 passed",
+      "api_ping": "HTTP 200 authenticated fixture, remoteConfigProxyOnlyLogs=true, zero active/scheduled jobs",
+      "hardware_access": false
+    }
+  }
 }
