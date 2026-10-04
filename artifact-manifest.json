@@ -67,5 +67,22 @@
     "sha256": "3998cfebe6ff495bcae816faf2eaa5e867b6938ecde0d882f9374f6c8574a9e5",
     "manifest": "candidates/glink-iosxr-prompt-20261004/manifest.json",
     "rollback_artifact_commit": "33103d2d9f8658c53336b0989713eeba5b2947ec"
+  },
+  "config5_pilot": {
+    "version": "v2026.10.04-glink-pilot.1",
+    "manifest": "config5/v2026.10.04-glink-pilot.1/manifest.json",
+    "rollout": "explicit client/proxy/device selection",
+    "artifacts": {
+      "inoc-config5": {
+        "path": "config5/v2026.10.04-glink-pilot.1/inoc-config5",
+        "sha256": "e19d5318220bff689f9a3a78f133f6351b216a7d2952c54241b98c97611f4456",
+        "source_commit": "e5ba016f579dadaa9c3ad4450b597f67daf41dab"
+      },
+      "inoc-node-terminal-v1dot1beta36": {
+        "path": "config5/v2026.10.04-glink-pilot.1/inoc-node-terminal-v1dot1beta36",
+        "sha256": "284e49c77cb9913e05a359322bfd63e97781fcd244c30db54d072790f146a741",
+        "source_commit": "6d10186cb89263b5e72d6b83b7e3b70e26f81aca"
+      }
+    }
   }
 }
