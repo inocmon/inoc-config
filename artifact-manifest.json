@@ -57,5 +57,15 @@
       "node_terminal_unit_tests": "PASS: 7/7",
       "real_device_writes": false
     }
+  },
+  "glink_iosxr_prompt_fix": {
+    "version": "v2026.10.04-glink-iosxr-prompt.1",
+    "production_ready": true,
+    "source_repository": "inocmon/inoc-config-project",
+    "source_commit": "8c29c746880a39482649ab905dd4131ec7502070",
+    "path": "inoc-config4",
+    "sha256": "3998cfebe6ff495bcae816faf2eaa5e867b6938ecde0d882f9374f6c8574a9e5",
+    "manifest": "candidates/glink-iosxr-prompt-20261004/manifest.json",
+    "rollback_artifact_commit": "33103d2d9f8658c53336b0989713eeba5b2947ec"
   }
 }

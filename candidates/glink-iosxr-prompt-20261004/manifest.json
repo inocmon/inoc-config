@@ -1,0 +1,22 @@
+{
+  "version": "v2026.10.04-glink-iosxr-prompt.1",
+  "status": "compiled_dev_and_real_device_validated",
+  "production_ready": true,
+  "source_repository": "inocmon/inoc-config-project",
+  "source_commit": "8c29c746880a39482649ab905dd4131ec7502070",
+  "binary": "inoc-config4",
+  "binary_sha256": "3998cfebe6ff495bcae816faf2eaa5e867b6938ecde0d882f9374f6c8574a9e5",
+  "reported_version": "v4-beta13",
+  "build_command": "python -m PyInstaller --noconfirm --clean --distpath /output --workpath /tmp/build inoc-config4-beta13.spec",
+  "validation": {
+    "executor_unit_tests": "PASS: 34 tests",
+    "compiled_version": "PASS: inoc-config4-beta13 v4-beta13",
+    "compiled_readonly_contract": "PASS: rev9-pon-v1",
+    "glink_port27_commit": "1000000153",
+    "glink_port27_readback": "PASS: interface 27.2043 matches interface 20.2043 and belongs to CONECTHOST",
+    "production_operation_id": "4974251b-2b4c-429a-895c-fb11f6e83a42",
+    "real_device_writes": true
+  },
+  "rollback_artifact_commit": "33103d2d9f8658c53336b0989713eeba5b2947ec",
+  "rollback_path_on_proxy": "/usr/bin/inoc-config4.rollback-20261003-f671"
+}
