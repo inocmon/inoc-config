@@ -42,7 +42,7 @@
     "production_ready": true,
     "source_repository": "inocmon/inoc-config-project",
     "source_commit": "562263145cc04e7c2ca3ba61e1ab269d294f3d3c",
-    "path": "inoc-config4",
+    "path": "candidates/remote-config-proxy-logs-20261002/inoc-config4",
     "sha256": "9cce200436a3f612ccd12a2147339e4645042476268110389c22348a7afbf8a4",
     "manifest": "candidates/remote-config-proxy-logs-20261002/manifest.json",
     "node_terminal_version": "1.1beta35",
