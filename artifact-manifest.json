@@ -121,5 +121,35 @@
         "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
       }
     }
+  },
+  "fiberhome_pilot": {
+    "version": "v2026.10.14-fiberhome.1",
+    "rollout": "explicit Maranet client/proxy/device pilot",
+    "production_ready": true,
+    "source_commit": "27f03edb9f19cd6b1c9c833d67fdd60122203be7",
+    "artifacts": {
+      "inoc-config5": {
+        "path": "config5/v2026.10.14-fiberhome.1/inoc-config5",
+        "sha256": "cd5f66755c0fe9d63eb58cb387058b3522ea3eeaafedb64aa960a14c6e6edbba",
+        "source_commit": "5423ecad031d0495bd0095aff17ed6ec9952a131"
+      },
+      "inoc-node-terminal-v1dot1beta38": {
+        "path": "config5/v2026.10.14-fiberhome.1/inoc-node-terminal-v1dot1beta38",
+        "sha256": "da5a61955bf3eb485eb4b110fd4484a32099347d9740828d1ab4401d701f20de",
+        "source_commit": "8fcfc1fa6c27ee4fd751dfa220240c80a70ac5d5"
+      }
+    },
+    "validation": {
+      "compiled_proxy_and_executor_isolated": "PASS",
+      "telnet_same_enable_missing_and_rejected_command": "PASS",
+      "node_tests": 26,
+      "executor_tests": 29
+    },
+    "limitations": [
+      "Live OLT CLI queries still require firmware validation",
+      "No optical dBm scale inferred",
+      "Does not replace the global stable executor"
+    ],
+    "manifest": "config5/v2026.10.14-fiberhome.1/manifest.json"
   }
 }
