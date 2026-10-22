@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "candidate_version": "1.1beta39",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "source_commit": "390c5dfa4586ba055752e1d24014a726fe6eef8e",
+  "source_layout": "per-artifact",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "remote-execution/remote-execution-2026.10.22.1/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "390c5dfa4586ba055752e1d24014a726fe6eef8e",
+      "bytes": 128978112,
+      "sha256": "01de7497b80c59a424e71b450f2d63abe2fee89921686d5646e60088fa00a7b6",
+      "package": {
+        "path": "remote-execution/remote-execution-2026.10.22.1/inoc-node-terminal-v1dot1beta39.gz",
+        "format": "gzip",
+        "bytes": 42532364,
+        "sha256": "66d536f7f4533376abf77fc58aeb119c46048c038a58a8236fa21502372075e4"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.1/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "release_id": "remote-execution-2026.10.22.1",
+  "legacy_acceptance_passed": true,
+  "validation": {
+    "node_build_run": 39816174875,
+    "python_build_run": 39809109307,
+    "frozen_integration_run": 39816673329,
+    "systemd_lifecycle_run": 39816673362,
+    "central_run": 39829197463,
+    "central_commit": "74ecbee63ee615b424e9d43af6c869df11120d73",
+    "legacy_fresh_installer_run": 39826944339,
+    "legacy_migration_run": 39826281008,
+    "legacy_async_fault_run": 39821990191,
+    "legacy_exact_php_transport_run": 39823403041,
+    "component_static_verification": "14/14 tags and checkouts; hashes and materialization passed"
+  },
+  "release_status": "accepted-for-production-pilot",
+  "production_deployment_validated": false
+}

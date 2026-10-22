@@ -185,11 +185,11 @@
     "manifest": "administrative/v2026.10.16-admin-batch-rc2/manifest.json"
   },
   "remote_execution_release": {
-    "version": "remote-execution-2026.10.22.1-rc.1",
-    "production_ready": false,
-    "release_status": "release-candidate",
+    "version": "remote-execution-2026.10.22.1",
+    "production_ready": true,
+    "release_status": "accepted-for-production-pilot",
     "source_layout": "per-artifact",
-    "manifest": "remote-execution/remote-execution-2026.10.22.1-rc.1/manifest.json",
+    "manifest": "remote-execution/remote-execution-2026.10.22.1/manifest.json",
     "source_snapshot_commit": "61ee2bfd64d642d0a1bc96018226d30c20c4a8df"
   }
 }
