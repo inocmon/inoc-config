@@ -3,3 +3,4 @@ rsa/
 certs/
 .env
 logs/*
+/remote-execution/remote-execution-2026.10.22.1-rc.1/inoc-node-terminal-v1dot1beta39
