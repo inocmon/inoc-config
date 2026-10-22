@@ -1,0 +1,64 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "candidate_version": "1.1beta39",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "source_commit": "7755b33f46a895fde6c9c996a9ab3fb86cc717c3",
+  "source_layout": "per-artifact",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "7755b33f46a895fde6c9c996a9ab3fb86cc717c3",
+      "bytes": 128978112,
+      "sha256": "91f9e262ef3d02f764978f6d0cdc5eb4836375e1ab150fff12162edef5401961",
+      "package": {
+        "path": "remote-execution/remote-execution-2026.10.22.2/inoc-node-terminal-v1dot1beta39.gz",
+        "format": "gzip",
+        "bytes": 42534609,
+        "sha256": "052cbadab55b06cd3cdb9a27c5d4df582c8399c43ef7400dc907f18d2b59da25"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "release_id": "remote-execution-2026.10.22.2",
+  "legacy_acceptance_passed": true,
+  "validation": {
+    "node_build_run": 39845689973,
+    "python_build_run": 39809109307,
+    "frozen_integration_run": 39846336498,
+    "systemd_lifecycle_run": 39852968479,
+    "central_run": 39855563516,
+    "central_commit": "dd0fa769cbcef2d5cd5d84909b1ca0dc19c99e48",
+    "legacy_fresh_installer_run": 39847829286,
+    "legacy_migration_run": 39849396303,
+    "api_provisioner_run": 39855586260,
+    "api_failed_enrollment_update_run": 39855586253,
+    "installer_sha256": "e29d7f1fc4e9b15af65afde72b48cce3d0cd7322fefb79b93a330fe69b073c8e",
+    "updater_sha256": "f8e9e77df8d53807ac627f97b38498872f4673585780bf7a76367b316bc9bfda",
+    "lifecycle_sha256": "78cb2036dcbe844eee0930bb3f5d66d52b90309b2f7d8fefe577c85e5715ebfa",
+    "component_static_verification": "PASS: 7 expected component hashes; 13/13 central API snapshot files equal central dd0fa769cbcef2d5cd5d84909b1ca0dc19c99e48; all 16 SOURCE-SNAPSHOT references verified at source 24f8b84f0ee7d6d89515d52e6a761d5f1d6026ce; direct lifecycle, installer, updater and public installer copies match.",
+    "component_static_verification_sha256": "94a6396cd04e36a7d600148050361e39c110a61ac947f1641273763815599c0c",
+    "api_worker_sha256": "8dc14156a8f383868366121cc8ca78871b57840e71037371be9c0d2764a814a2",
+    "api_transport_sha256": "ad2a9d2e172e582eca2a7e4e1f54faab8150586bb9d1500753c23d0f5bed58b2",
+    "api_provisioner_sha256": "072660ad058d1172db603129156e586d2f12231cd06c67caf612544b01b58567",
+    "enrollment_store_sha256": "38c3d08e0dd91e5fad093f03b70137d71c5c2cef9de6e221a73a2ff1c1969ef9",
+    "api_ci_evidence_summary_sha256": "4e8474cf3a8c5eec46cdb1b7ac6a9c319d963e904393ef152d39800e976dbd6f"
+  },
+  "release_status": "accepted-for-production-pilot",
+  "production_deployment_validated": false,
+  "source_snapshot_commit": "24f8b84f0ee7d6d89515d52e6a761d5f1d6026ce",
+  "source_snapshot_tag": "inoc-config-source-remote-execution-v2026.10.22.2",
+  "source_snapshot_tag_object": "e64c03e21ca86367fc624f85b44a9e9f8783949e"
+}
