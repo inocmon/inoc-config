@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "release_id": "active-execution-2026.10.23.1",
+  "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+  "laravel_commit": "8578b473587adbc76ac7076778ff9e7c052b7961",
+  "binary": {
+    "name": "inoc-node-terminal-v1dot1beta39",
+    "sha256": "ff481902cfdbc457e2074ff6825c46e1ee0e217ff711cf7dbee928fb444801e8",
+    "bytes": 128978112
+  },
+  "files": {
+    "install-active.sh": {
+      "sha256": "7b0cba1bd3b3ed680f3902ccf1657b8a7c2a435ea3f23f1ca4e74b7f44b2ff1b",
+      "bytes": 1706
+    },
+    "inoc-node-terminal-v1dot1beta39.gz": {
+      "sha256": "52511cd2e2f8a582916a50beca9a20903456f5e9a45e34147dc1160220cdce99",
+      "bytes": 42831441
+    },
+    "proxy-certificate-dns-hook.py": {
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "bytes": 3754
+    }
+  },
+  "validation": "DEV: frozen service installation + real Laravel broker; exactly one execution after dropped response; no inbound listener",
+  "production_pilot_validated": false,
+  "legacy_services_replaced": false
+}
