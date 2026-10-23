@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-active-2026.10.23.1-rc.1",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+  "laravel_commit": "cb18c5252083682aeb19adb9a0091c551060026f",
+  "production_ready": false,
+  "acceptance_passed": false,
+  "published": true,
+  "release_status": "candidate-dev-only",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+      "bytes": 128978112,
+      "sha256": "ff481902cfdbc457e2074ff6825c46e1ee0e217ff711cf7dbee928fb444801e8",
+      "package": {
+        "path": "active-execution/active-execution-2026.10.23.1/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42831441,
+        "sha256": "52511cd2e2f8a582916a50beca9a20903456f5e9a45e34147dc1160220cdce99",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/native-active-support.py",
+      "bytes": 8159,
+      "sha256": "8381cbbbfb9cc58194a9e378446a3ec4ed302abf466a7bfa0e7990db2c060c3e",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/proxy-certificate-manager.py",
+      "bytes": 8225,
+      "sha256": "bfae14c28dceebb9e8a84dbeac482604af55a82d5b1e80d60c44f45c6bd26159",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/install-proxy-certificate-renewal.py",
+      "bytes": 4202,
+      "sha256": "9296d0dbc7a7e3616d8fb58a99e078128b65ca07874196acec7a2f3094bc8f47",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/proxy-runtime-status.py",
+      "bytes": 7532,
+      "sha256": "6a98fd924c32549e7090ec3b6a03c321234dbe38fe72058d769058109431e964",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.23.1-rc.1/install-proxy-runtime-status.py",
+      "bytes": 3951,
+      "sha256": "5b4ef51dc2dc29b3aa4f00ca18439d5212704fb12c08e1d4c9df4b5536f33efe",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "cb18c5252083682aeb19adb9a0091c551060026f"
+    }
+  },
+  "validation": {
+    "binary_rebuilt": false,
+    "native_lifecycle_dev_passed": true,
+    "api_bootstrap_distribution_passed": false,
+    "native_support_real_acme_passed": false,
+    "production_deployment_validated": false
+  }
+}
