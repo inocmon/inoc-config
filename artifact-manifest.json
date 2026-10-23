@@ -191,5 +191,14 @@
     "source_layout": "per-artifact",
     "manifest": "remote-execution/remote-execution-2026.10.22.2/manifest.json",
     "source_snapshot_commit": "24f8b84f0ee7d6d89515d52e6a761d5f1d6026ce"
+  },
+  "remote_active_execution_release": {
+    "version": "native-active-2026.10.23.2",
+    "production_ready": true,
+    "release_status": "accepted-for-production-pilot",
+    "manifest": "active-execution/native-active-2026.10.23.2/manifest.json",
+    "source_layout": "per-artifact",
+    "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+    "laravel_commit": "a637aec8a8da2bdeb2f84e5cb1dfb1650da392fb"
   }
 }
