@@ -1,0 +1,18 @@
+{
+  "schema": 1,
+  "release_id": "active-installer-2026.10.23.2",
+  "source_commit": "860cfdd159d2d6c56ec166f51df299ecafda3380",
+  "files": {
+    "install-active.sh": {
+      "sha256": "b4e764a8964d5ceea306025d93d015d0a48eac5a14d14a269299d4d1df1780a1",
+      "bytes": 2488
+    }
+  },
+  "binary_artifact_commit": "025878772a4e700248b77892883026ac8582a731",
+  "binary_path": "active-execution/active-execution-2026.10.23.1/inoc-node-terminal-v1dot1beta39.gz",
+  "binary_source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+  "binary_sha256": "ff481902cfdbc457e2074ff6825c46e1ee0e217ff711cf7dbee928fb444801e8",
+  "validation": "DEV frozen systemd installer: rejects inaccessible parent; exactly one execution after dropped report; no listener; local process remains stable",
+  "laravel_integrated_in_this_test": false,
+  "existing_services_changed": false
+}
