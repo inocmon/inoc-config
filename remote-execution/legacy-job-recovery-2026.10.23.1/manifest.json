@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "release_id": "legacy-job-recovery-2026.10.23.1",
+  "contract": "laravel-execution-v1",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "release_status": "accepted-for-production-pilot",
+  "source_commit": "e71ab92c0677ac08ee0fc09aa7b1eb28bcd3d72e",
+  "runtime_modes": [
+    "legacy-https",
+    "dedicated-https",
+    "active"
+  ],
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "remote-execution/legacy-job-recovery-2026.10.23.1/inoc-node-terminal-v1dot1beta39",
+      "sha256": "f6231ce1f0da700080d9745832556b6ce108549468cd501f0dc01c6f18535a4a",
+      "bytes": 128978112,
+      "source_commit": "e71ab92c0677ac08ee0fc09aa7b1eb28bcd3d72e",
+      "package": {
+        "path": "remote-execution/legacy-job-recovery-2026.10.23.1/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42484925,
+        "sha256": "1e9cd4db5ea5c59884935e6ee0cffb926487c3de575350819077686bd4ba3ed2",
+        "format": "gzip"
+      }
+    }
+  },
+  "validation": {
+    "store_tests": 13,
+    "execution_regression_tests": 29,
+    "legacy_https_restart_test": true,
+    "dedicated_https_test": true,
+    "active_systemd_laravel_sqlite_test": true,
+    "production_proxy_validated": false
+  },
+  "limits": [
+    "Unknown outcomes remain locked; no automatic replay or cleanup of unresolved history.",
+    "Existing active release and default legacy binary selectors remain unchanged; explicit per-proxy rollout only."
+  ]
+}
