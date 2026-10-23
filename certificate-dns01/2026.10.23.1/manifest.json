@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "release": "certificate-dns01-2026.10.23.1",
+  "source_repository": "inocmon/inocmon6",
+  "source_commit": "5b1d6c1fe77357815282aa6e3d3539181087cd6c",
+  "requires": "Laravel >= 6.32.1, active enrollment and explicit certificate binding, Python >= 3.9, Certbot with manual hooks",
+  "files": {
+    "install-proxy-certificate-renewal.py": {
+      "bytes": 4202,
+      "sha256": "9296d0dbc7a7e3616d8fb58a99e078128b65ca07874196acec7a2f3094bc8f47"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3"
+    },
+    "proxy-certificate-manager.py": {
+      "bytes": 8225,
+      "sha256": "bfae14c28dceebb9e8a84dbeac482604af55a82d5b1e80d60c44f45c6bd26159"
+    }
+  },
+  "listener_migration": "not included; active HTTPS client does not require an inbound certificate",
+  "private_key_location": "proxy"
+}
