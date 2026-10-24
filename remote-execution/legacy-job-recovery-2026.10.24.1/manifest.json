@@ -4,7 +4,7 @@
   "contract": "laravel-execution-v1",
   "production_ready": true,
   "acceptance_passed": true,
-  "release_status": "accepted-for-production-pilot",
+  "release_status": "accepted-for-production",
   "source_commit": "e71ab92c0677ac08ee0fc09aa7b1eb28bcd3d72e",
   "runtime_modes": [
     "legacy-https",
@@ -43,7 +43,12 @@
     "dedicated_https_test": true,
     "active_systemd_laravel_sqlite_test": true,
     "production_proxy_validated": true,
-    "production_pilot": "MARANET B03; verified runtime hash and completed #inocmon through unchanged active service"
+    "production_pilot": "MARANET B03; verified runtime hash and completed #inocmon through unchanged active service",
+    "fresh_install_ci": "https://github.com/inocmon/inoc-config-project/actions/runs/40044456015",
+    "fresh_install_scenarios": [
+      "existing_lineage",
+      "forced_issue"
+    ]
   },
   "limits": [
     "Unknown outcomes remain protected; package does not replay interrupted commands.",
