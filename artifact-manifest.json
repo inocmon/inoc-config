@@ -202,10 +202,10 @@
     "laravel_commit": "a637aec8a8da2bdeb2f84e5cb1dfb1650da392fb"
   },
   "legacy_job_recovery_release": {
-    "version": "legacy-job-recovery-2026.10.23.1",
+    "version": "legacy-job-recovery-2026.10.24.1",
     "production_ready": true,
     "release_status": "accepted-for-production-pilot",
-    "manifest": "remote-execution/legacy-job-recovery-2026.10.23.1/manifest.json",
+    "manifest": "remote-execution/legacy-job-recovery-2026.10.24.1/manifest.json",
     "source_commit": "e71ab92c0677ac08ee0fc09aa7b1eb28bcd3d72e"
   }
 }
