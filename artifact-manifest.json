@@ -207,5 +207,13 @@
     "release_status": "accepted-for-production-pilot",
     "manifest": "remote-execution/legacy-job-recovery-2026.10.24.1/manifest.json",
     "source_commit": "e71ab92c0677ac08ee0fc09aa7b1eb28bcd3d72e"
+  },
+  "routeros_crlf_pilot_20261025": {
+    "release_id": "native-active-2026.10.25.5",
+    "manifest": "active-execution/native-active-2026.10.25.5/manifest.json",
+    "manifest_sha256": "9499f7c51bcf82124e9f3be3cd43f31648a6f1cdf27ba44b2675186afbaf39e5",
+    "source_commit": "e555380581eb1c9cd3f0dafeae944ff487b1faa8",
+    "rollout": "explicit single-proxy pilot; default remains native-active-2026.10.25.4",
+    "production_pilot_passed": false
   }
 }
