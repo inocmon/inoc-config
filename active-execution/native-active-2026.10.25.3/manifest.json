@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-active-2026.10.25.3",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "fd774a0354b0a28628883511866ac26b7924d2a4",
+  "laravel_commit": "3c049e39c4623c5f2e6b6d6c0cc033e80c2b7dd4",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "fcb26b2059afbf97a38a2031341ebc9b575dda45",
+      "bytes": 128978112,
+      "sha256": "a4ffe667ff182f4781d2c3e621a9cfc4c7869d55a26b6a2c8aded51d7d33d6ba",
+      "package": {
+        "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42485302,
+        "sha256": "a5754e40b07f816b8a102008cf020c613f387b33eeb88fdff7563afbac5b06b2",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "active-execution/native-active-2026.10.25.3/inoc-config5",
+      "source_commit": "fd774a0354b0a28628883511866ac26b7924d2a4",
+      "bytes": 21304464,
+      "sha256": "7efa6ad3147883aaef29d93262e724fe41720cacf77b8bd4c5ccb592da39f2c4"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.25.1/native-active-support.py",
+      "bytes": 8159,
+      "sha256": "ba4a1ef8d8cb8ca73cc811db1a558fb346b1121f7c50647878556be088bf493d",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-manager.py",
+      "bytes": 8929,
+      "sha256": "ffad6e2031bb45c6e51c80574dc482f384b82968bf5f936ac4e3c8894dae35d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-certificate-renewal.py",
+      "bytes": 6464,
+      "sha256": "13d1ba3c5d1d765de62cb704f46f53cfd562cf93110084b8a8b6863ce12b0dbb",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-runtime-status.py",
+      "bytes": 7532,
+      "sha256": "6a98fd924c32549e7090ec3b6a03c321234dbe38fe72058d769058109431e964",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-runtime-status.py",
+      "bytes": 3951,
+      "sha256": "5b4ef51dc2dc29b3aa4f00ca18439d5212704fb12c08e1d4c9df4b5536f33efe",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    }
+  },
+  "validation": {
+    "executor_rebuilt": true,
+    "node_rebuilt": false,
+    "source_connection_tests": 4,
+    "config5_tests_including_packaged_executor": 21,
+    "frozen_slow_auth_cases": 2,
+    "password_rejection_not_retried": true,
+    "disconnect_not_replayed": true,
+    "absolute_execution_deadline_tested": true,
+    "production_pilot_passed": false,
+    "limits": [
+      "Source and frozen loopback acceptance; real device validation is tracked separately.",
+      "The 12-second window limits retry eligibility; the existing absolute process deadline bounds supervised executions."
+    ]
+  }
+}
