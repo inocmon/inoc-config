@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-active-2026.10.25.5",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "e555380581eb1c9cd3f0dafeae944ff487b1faa8",
+  "laravel_commit": "b5950c656c637959ce35b1e061d0b4fc1a716249",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "fcb26b2059afbf97a38a2031341ebc9b575dda45",
+      "bytes": 128978112,
+      "sha256": "a4ffe667ff182f4781d2c3e621a9cfc4c7869d55a26b6a2c8aded51d7d33d6ba",
+      "package": {
+        "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42485302,
+        "sha256": "a5754e40b07f816b8a102008cf020c613f387b33eeb88fdff7563afbac5b06b2",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "active-execution/native-active-2026.10.25.5/inoc-config5",
+      "source_commit": "e555380581eb1c9cd3f0dafeae944ff487b1faa8",
+      "bytes": 21305184,
+      "sha256": "efcc51aaa2674c4cc074d18fdbeef0f4ed25cc6aaecf9a100beaf5f518f0e9e0"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.25.4/native-active-support.py",
+      "bytes": 8159,
+      "sha256": "2fcbb7a808d563324394d7eacc96e549b84db904c037e90b3d9e4c4825c71a12",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "24d89a75d9b2afa76b89f674d22aac2761ef9623"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-manager.py",
+      "bytes": 8929,
+      "sha256": "ffad6e2031bb45c6e51c80574dc482f384b82968bf5f936ac4e3c8894dae35d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-certificate-renewal.py",
+      "bytes": 6464,
+      "sha256": "13d1ba3c5d1d765de62cb704f46f53cfd562cf93110084b8a8b6863ce12b0dbb",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.4/proxy-runtime-status.py",
+      "bytes": 7977,
+      "sha256": "d8fac8adba7252016ee1eb7cdfce9569d11e81ae6fb4caa605af96c82eda357c",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "24d89a75d9b2afa76b89f674d22aac2761ef9623"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.4/install-proxy-runtime-status.py",
+      "bytes": 4015,
+      "sha256": "de0f76e0877562773b8a574700461c217d1a004130a2d59268b8f36889920c2b",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "24d89a75d9b2afa76b89f674d22aac2761ef9623"
+    }
+  },
+  "validation": {
+    "executor_rebuilt": true,
+    "node_rebuilt": false,
+    "frozen_executor_tests": 24,
+    "production_pilot_passed": false,
+    "limits": [
+      "Accepted for a single production pilot after isolated DEV qualification. Not the default installer release.",
+      "CRLF selected from authenticated ROSSSH before the first line; no command retry; generic and REV9 LF preserved."
+    ]
+  }
+}
