@@ -1,0 +1,56 @@
+{
+  "schema_version": 1,
+  "release_id": "managed-tls-2026.10.25.1",
+  "contract": "laravel-execution-v1",
+  "production_ready": false,
+  "acceptance_passed": false,
+  "release_status": "candidate-local-tests-passed-installer-ci-pending",
+  "source_commit": "14f819fab09d3e69ef12e492de11acd387db5824",
+  "runtime_modes": [
+    "legacy-https",
+    "dedicated-https",
+    "active"
+  ],
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "remote-execution/managed-tls-2026.10.25.1/inoc-node-terminal-v1dot1beta39",
+      "sha256": "09fad594be2b2e224441810092f1306e562c5b8cc6fe825760812ba44d5231ce",
+      "bytes": 128978112,
+      "source_commit": "14f819fab09d3e69ef12e492de11acd387db5824",
+      "package": {
+        "path": "remote-execution/managed-tls-2026.10.25.1/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42836106,
+        "sha256": "36ee00102cdb50332fd613c34be3a2e9eb4dc6b26eefc8f3b6438c1d99a105be",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "validation": {
+    "node_tests": 64,
+    "frozen_managed_tls_https": true,
+    "frozen_legacy_job_recovery": true,
+    "frozen_dedicated_https": true,
+    "fresh_install_ci": null,
+    "full_updater_ci": null,
+    "production_proxy_validated": false
+  },
+  "limits": [
+    "Candidate only; not selected for production before installer/updater acceptance.",
+    "SNI covers the local API; this does not publish DNS or establish an outbound HTTP tunnel."
+  ],
+  "published": false,
+  "legacy_acceptance_passed": false,
+  "source_layout": "per-artifact",
+  "runtime_mode": "dedicated"
+}
