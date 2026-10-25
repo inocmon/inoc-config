@@ -2,9 +2,9 @@
   "schema_version": 1,
   "release_id": "managed-tls-2026.10.25.1",
   "contract": "laravel-execution-v1",
-  "production_ready": false,
-  "acceptance_passed": false,
-  "release_status": "candidate-local-tests-passed-installer-ci-pending",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "release_status": "accepted-for-production-pilot",
   "source_commit": "14f819fab09d3e69ef12e492de11acd387db5824",
   "runtime_modes": [
     "legacy-https",
@@ -41,16 +41,18 @@
     "frozen_managed_tls_https": true,
     "frozen_legacy_job_recovery": true,
     "frozen_dedicated_https": true,
-    "fresh_install_ci": null,
-    "full_updater_ci": null,
-    "production_proxy_validated": false
+    "fresh_install_ci": "https://github.com/inocmon/inoc-config-project/actions/runs/40241881286",
+    "full_updater_ci": "https://github.com/inocmon/inoc-config-project/actions/runs/40241881286",
+    "production_proxy_validated": false,
+    "native_laravel_systemd": true
   },
   "limits": [
-    "Candidate only; not selected for production before installer/updater acceptance.",
-    "SNI covers the local API; this does not publish DNS or establish an outbound HTTP tunnel."
+    "Qualified for production pilot; fleet installation is separately verified.",
+    "CI updater filters only its own namespace/resource overlay; real guard negative checks passed; distributed updater has no adapter.",
+    "SNI covers local API only; DNS publication and outbound web gateway are not implied."
   ],
-  "published": false,
-  "legacy_acceptance_passed": false,
+  "published": true,
+  "legacy_acceptance_passed": true,
   "source_layout": "per-artifact",
   "runtime_mode": "dedicated"
 }
