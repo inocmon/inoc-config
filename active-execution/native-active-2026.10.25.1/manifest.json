@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-active-2026.10.25.1",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+  "laravel_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-active-2026.10.23.2/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "4cbcc3e3f1de40075d0d524f87b5e355896e9a2e",
+      "bytes": 128978112,
+      "sha256": "ff481902cfdbc457e2074ff6825c46e1ee0e217ff711cf7dbee928fb444801e8",
+      "package": {
+        "path": "active-execution/active-execution-2026.10.23.1/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42831441,
+        "sha256": "52511cd2e2f8a582916a50beca9a20903456f5e9a45e34147dc1160220cdce99",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.25.1/native-active-support.py",
+      "bytes": 8159,
+      "sha256": "ba4a1ef8d8cb8ca73cc811db1a558fb346b1121f7c50647878556be088bf493d",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-manager.py",
+      "bytes": 8929,
+      "sha256": "ffad6e2031bb45c6e51c80574dc482f384b82968bf5f936ac4e3c8894dae35d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-certificate-renewal.py",
+      "bytes": 6464,
+      "sha256": "13d1ba3c5d1d765de62cb704f46f53cfd562cf93110084b8a8b6863ce12b0dbb",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-runtime-status.py",
+      "bytes": 7532,
+      "sha256": "6a98fd924c32549e7090ec3b6a03c321234dbe38fe72058d769058109431e964",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-runtime-status.py",
+      "bytes": 3951,
+      "sha256": "5b4ef51dc2dc29b3aa4f00ca18439d5212704fb12c08e1d4c9df4b5536f33efe",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    }
+  },
+  "validation": {
+    "binary_rebuilt": false,
+    "existing_binary_hashes_preserved": true,
+    "private_certificate_helpers_tests_passed": true,
+    "certbot_1_12_real_parser_passed": true,
+    "production_certificate_proof_passed": false,
+    "limits": [
+      "Certbot parser validation does not issue a certificate; pilot requires real issuance, renewal proof and timer verification."
+    ]
+  }
+}
