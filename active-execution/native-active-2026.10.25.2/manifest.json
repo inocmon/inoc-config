@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-active-2026.10.25.2",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "fcb26b2059afbf97a38a2031341ebc9b575dda45",
+  "laravel_commit": "f3f5d0b79d805f78d7139115797334ec5cd8dcf2",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "fcb26b2059afbf97a38a2031341ebc9b575dda45",
+      "bytes": 128978112,
+      "sha256": "a4ffe667ff182f4781d2c3e621a9cfc4c7869d55a26b6a2c8aded51d7d33d6ba",
+      "package": {
+        "path": "active-execution/native-active-2026.10.25.2/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42485302,
+        "sha256": "a5754e40b07f816b8a102008cf020c613f387b33eeb88fdff7563afbac5b06b2",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/remote-execution-2026.10.22.2/inoc-config5",
+      "source_commit": "f2b13efb28cceaa6ddc695d74efd2ccd2f086f0b",
+      "bytes": 29366392,
+      "sha256": "161ce0ae66fa39f31d60c79befe9c252fbc4d09c5526675bbad3f071e0cbcb8a"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.25.1/native-active-support.py",
+      "bytes": 8159,
+      "sha256": "ba4a1ef8d8cb8ca73cc811db1a558fb346b1121f7c50647878556be088bf493d",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-manager.py",
+      "bytes": 8929,
+      "sha256": "ffad6e2031bb45c6e51c80574dc482f384b82968bf5f936ac4e3c8894dae35d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-certificate-renewal.py",
+      "bytes": 6464,
+      "sha256": "13d1ba3c5d1d765de62cb704f46f53cfd562cf93110084b8a8b6863ce12b0dbb",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/proxy-runtime-status.py",
+      "bytes": 7532,
+      "sha256": "6a98fd924c32549e7090ec3b6a03c321234dbe38fe72058d769058109431e964",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.1/install-proxy-runtime-status.py",
+      "bytes": 3951,
+      "sha256": "5b4ef51dc2dc29b3aa4f00ca18439d5212704fb12c08e1d4c9df4b5536f33efe",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "5601678d7cc85abcb17ef2e92ad6d46e5f2fabce"
+    }
+  },
+  "validation": {
+    "binary_rebuilt": true,
+    "source_tests": 34,
+    "central_tests": 122,
+    "central_assertions": 1435,
+    "frozen_https_php_passed": true,
+    "frozen_active_systemd_laravel_passed": true,
+    "lost_response_recovered": true,
+    "inbound_listeners": 0,
+    "diagnostics_sanitized": true,
+    "unknown_locks_preserved": true,
+    "production_pilot_passed": false,
+    "limits": [
+      "DEV executor fixtures do not prove real device command execution; pilot tracked separately.",
+      "Existing unknown jobs are not reclassified or replayed."
+    ]
+  }
+}
