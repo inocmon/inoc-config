@@ -1,0 +1,63 @@
+{
+  "schema_version": 2,
+  "candidate_version": "1.1beta39",
+  "production_ready": false,
+  "built_at_utc": "2026-10-26T12:52:44.225Z",
+  "source_commit": "486c4fcd2f1b61d36baa918c96dcd02a13af68aa",
+  "target": "node22.23.4-linux-x64",
+  "platform": "linux",
+  "architecture": "amd64",
+  "toolchain": {
+    "node": "v22.22.1",
+    "npm": "9.2.0",
+    "pkg": "6.23.0",
+    "host": "Linux x86_64"
+  },
+  "runtime": {
+    "node": "v22.23.4",
+    "openssl": "3.5.9",
+    "v8": "12.4.254.21-node.57",
+    "platform": "linux",
+    "architecture": "x64",
+    "lts": "Jod",
+    "single_executable_application": true
+  },
+  "upstream_runtime": {
+    "schema_version": 1,
+    "node_version": "v22.23.4",
+    "release_line": "LTS Jod",
+    "platform": "linux",
+    "architecture": "x64",
+    "archive": "node-v22.23.4-linux-x64.tar.xz",
+    "url": "https://nodejs.org/dist/v22.23.4/node-v22.23.4-linux-x64.tar.xz",
+    "sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce",
+    "archive_bytes": 31029996,
+    "release_date": "2026-10-20",
+    "checksum_source": "https://nodejs.org/dist/v22.23.4/SHASUMS256.txt",
+    "release_index": "https://nodejs.org/dist/index.json",
+    "packager": "@yao-pkg/pkg",
+    "packager_version": "6.23.0",
+    "mode": "enhanced-sea",
+    "minimum_glibc": "2.28"
+  },
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "packaging": {
+    "name": "@yao-pkg/pkg",
+    "version": "6.23.0",
+    "mode": "enhanced-sea"
+  },
+  "artifact": {
+    "file": "inoc-node-terminal-v1dot1beta39",
+    "bytes": 128978112,
+    "sha256": "7daf443b00897c948e6c1bd93af7fa029a80f9ad17647003927d5ed231bedb60"
+  },
+  "bytecode": false,
+  "bit_for_bit_reproducibility_verified": false,
+  "artifact_published": false,
+  "acceptance_passed": false,
+  "stable_artifact_changed": false
+}
