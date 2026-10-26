@@ -193,13 +193,13 @@
     "source_snapshot_commit": "24f8b84f0ee7d6d89515d52e6a761d5f1d6026ce"
   },
   "remote_active_execution_release": {
-    "version": "native-active-2026.10.25.3",
+    "version": "native-progress-2026.10.26.1",
     "production_ready": true,
     "release_status": "accepted-for-production-pilot",
-    "manifest": "active-execution/native-active-2026.10.25.3/manifest.json",
+    "manifest": "active-execution/native-progress-2026.10.26.1/manifest.json",
     "source_layout": "per-artifact",
-    "source_commit": "fd774a0354b0a28628883511866ac26b7924d2a4",
-    "laravel_commit": "3c049e39c4623c5f2e6b6d6c0cc033e80c2b7dd4"
+    "source_commit": "e2bad85ce878cdfad94a8879a43b00dd1feb4435",
+    "laravel_commit": "d7742e5d693fcf141e3915e13dfde0d1ad10f338"
   },
   "legacy_job_recovery_release": {
     "version": "legacy-job-recovery-2026.10.24.1",

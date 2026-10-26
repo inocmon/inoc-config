@@ -6,10 +6,10 @@
   "source_layout": "per-artifact",
   "source_commit": "e2bad85ce878cdfad94a8879a43b00dd1feb4435",
   "laravel_commit": "d7742e5d693fcf141e3915e13dfde0d1ad10f338",
-  "production_ready": false,
-  "acceptance_passed": false,
-  "published": false,
-  "release_status": "candidate-awaiting-api-installer",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
   "node_runtime": {
     "version": "22.23.4",
     "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
@@ -88,8 +88,11 @@
     "partial_cli_before_completion": true,
     "production_pilot_passed": false,
     "limits": [
-      "Candidate: API installer acceptance pending; not qualified for production.",
-      "Partial output verified in isolated Laravel integration and browser fixture; production validation pending."
-    ]
+      "Qualified for scoped GNET pilot. Fleet and production partial-output evidence pending.",
+      "Browser validation used controlled snapshots; live user route is validated separately."
+    ],
+    "real_api_install": true,
+    "real_api_adoption": true,
+    "acceptance_artifact_commit": "ed029ffbfb0e116b6d87537b72da8138f288e5da"
   }
 }
