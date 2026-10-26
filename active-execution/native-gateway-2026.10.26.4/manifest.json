@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "native-gateway-2026.10.26.4",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "7952038d298036e6b0b17d5ea7959cea581ea937",
+  "laravel_commit": "57c899ae70816b4c0e210d6c2230b359f8d4628e",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/native-gateway-2026.10.26.4/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "9e5138fb809ba357bf2d21e31aec7c0a99cd3571",
+      "bytes": 129305792,
+      "sha256": "13b86f0be06847e171cda485bdbd6a6f60e33444edf4c6018d126fabc6531c5b",
+      "package": {
+        "path": "active-execution/native-gateway-2026.10.26.4/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42555094,
+        "sha256": "c2025b860c70f607c72c0b58053bdbade484d7247aa2917f1934f34cafd7fe3b",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "active-execution/native-gateway-2026.10.26.4/inoc-config5",
+      "source_commit": "7952038d298036e6b0b17d5ea7959cea581ea937",
+      "bytes": 29370624,
+      "sha256": "c2978f6fde64cbece88538cacfd5be6d7fffac810034540a48ae8b0781796dcb"
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/native-active-2026.10.25.6/native-active-support.py",
+      "bytes": 8395,
+      "sha256": "644fe2512ab2952a5c6d85e25d5776141387cb554af1794d9a37a3db0939de71",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/native-active-2026.10.25.6/proxy-certificate-manager.py",
+      "bytes": 13138,
+      "sha256": "333f6842a0926bc44e56902aeb8affd9e3d598c65f8c7cb69bce095b50eda80a",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/native-active-2026.10.25.6/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/native-active-2026.10.25.6/install-proxy-certificate-renewal.py",
+      "bytes": 6857,
+      "sha256": "a6290bb5a8a23a5cc37f0bb20000355f0f0b6c404ab7654bb7ca1f3bf40edd39",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.6/proxy-runtime-status.py",
+      "bytes": 9038,
+      "sha256": "9fcc06659ff87ed4588c4f97affeab489edbf62cc2aee4ebfdca176799a23e07",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/native-active-2026.10.25.6/install-proxy-runtime-status.py",
+      "bytes": 4045,
+      "sha256": "b0f6b5b938ce4131bb38f0a2046f3cda9db6c5a8d0d1e656c69fc336e95017d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    }
+  },
+  "validation": {
+    "ci_python_source_tests_passed": 44,
+    "ci_node_tests_passed": 38,
+    "ci_node_run": 40375837860,
+    "ci_python_run": 40376821479,
+    "frozen_python_topology_over_one_mib": true,
+    "legacy_output_limit_preserved": true,
+    "topology_output_limit_bytes": 4194304,
+    "production_pilot_passed": false,
+    "limits": [
+      "Accepted for a scoped STAR1 pilot; fleet rollout is not implied.",
+      "Production MPLS-TE and OSPF must be validated with the installed pair."
+    ]
+  }
+}
