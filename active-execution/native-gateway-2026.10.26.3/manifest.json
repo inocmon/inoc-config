@@ -5,7 +5,7 @@
   "runtime_mode": "active",
   "source_layout": "per-artifact",
   "source_commit": "a625dbcbba8d863b6d69d59e0783be94e9f52df6",
-  "laravel_commit": "4b1e508",
+  "laravel_commit": "4b1e508a1fb9395c1047ea006b5747ad2af69247",
   "production_ready": true,
   "acceptance_passed": true,
   "published": true,

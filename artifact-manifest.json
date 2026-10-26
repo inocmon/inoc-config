@@ -199,7 +199,7 @@
     "manifest": "active-execution/native-gateway-2026.10.26.3/manifest.json",
     "source_layout": "per-artifact",
     "source_commit": "a625dbcbba8d863b6d69d59e0783be94e9f52df6",
-    "laravel_commit": "4b1e508"
+    "laravel_commit": "4b1e508a1fb9395c1047ea006b5747ad2af69247"
   },
   "legacy_job_recovery_release": {
     "version": "legacy-job-recovery-2026.10.24.1",
