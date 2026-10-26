@@ -5,11 +5,11 @@
   "runtime_mode": "active",
   "source_layout": "per-artifact",
   "source_commit": "486c4fcd2f1b61d36baa918c96dcd02a13af68aa",
-  "laravel_commit": "5f8ae35ef2680e27f75108e517a1f9e236a1539e",
-  "production_ready": false,
-  "acceptance_passed": false,
-  "published": false,
-  "release_status": "candidate",
+  "laravel_commit": "d25455a6949c5d81d1a8f0cdcb9c35596a517ae9",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
   "node_runtime": {
     "version": "22.23.4",
     "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
@@ -84,7 +84,14 @@
     "capability_probe_does_not_block_progress": true,
     "production_pilot_passed": false,
     "limits": [
-      "Candidate revision; acceptance pending."
-    ]
+      "Isolated DEV fixture; long real production pilot and fleet evidence pending."
+    ],
+    "real_api_install": true,
+    "real_api_adoption": true,
+    "acceptance_artifact_commit": "649fda6f3c33d1be77f93e86693c7b9540c5bcf6",
+    "frozen_node_laravel_browser": true,
+    "latency_sample_lines": 8,
+    "latency_p95_ms": 263,
+    "latency_maximum_ms": 263
   }
 }
