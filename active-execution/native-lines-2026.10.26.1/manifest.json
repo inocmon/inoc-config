@@ -6,10 +6,10 @@
   "source_layout": "per-artifact",
   "source_commit": "fb7bbf4bdae618b86a7ad0b9486bdf6b6dc9ed33",
   "laravel_commit": "5f8ae35ef2680e27f75108e517a1f9e236a1539e",
-  "production_ready": false,
-  "acceptance_passed": false,
-  "published": false,
-  "release_status": "candidate",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
   "node_runtime": {
     "version": "22.23.4",
     "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
@@ -86,7 +86,14 @@
     "event_driven_progress": true,
     "production_pilot_passed": false,
     "limits": [
-      "Candidate; acceptance and browser latency validation pending."
-    ]
+      "Isolated DEV HTTP/SQLite and Xterm fixture; live production flow and fleet validation still pending."
+    ],
+    "real_api_install": true,
+    "real_api_adoption": true,
+    "acceptance_artifact_commit": "aea74bacf5519adc24cacfa34e9242d3b8f91195",
+    "frozen_node_laravel_browser": true,
+    "latency_sample_lines": 8,
+    "latency_p95_ms": 494,
+    "latency_maximum_ms": 494
   }
 }
