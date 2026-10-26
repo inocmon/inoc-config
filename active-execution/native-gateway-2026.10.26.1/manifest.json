@@ -6,10 +6,10 @@
   "source_layout": "per-artifact",
   "source_commit": "d2e618eceef642ce0627e7a53628372a4312c191",
   "laravel_commit": "0765876cfb2b970a639ba53b02ae89c28c4f77ce",
-  "production_ready": false,
-  "acceptance_passed": false,
-  "published": false,
-  "release_status": "candidate",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "accepted-for-production-pilot",
   "node_runtime": {
     "version": "22.23.4",
     "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
@@ -88,7 +88,10 @@
     "latency_p95_ms": 263,
     "production_pilot_passed": false,
     "limits": [
-      "DEV isolated fixtures; real API installer and production pilot pending."
-    ]
+      "DEV validated; production gateway and authenticated application pilot remain pending."
+    ],
+    "real_api_install": true,
+    "real_api_adoption": true,
+    "acceptance_artifact_commit": "f059125e06da032bb475e52c31d80e70dcaf8c8b"
   }
 }
