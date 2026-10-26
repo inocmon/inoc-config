@@ -193,13 +193,13 @@
     "source_snapshot_commit": "24f8b84f0ee7d6d89515d52e6a761d5f1d6026ce"
   },
   "remote_active_execution_release": {
-    "version": "native-lines-2026.10.26.2",
+    "version": "native-gateway-2026.10.26.2",
     "production_ready": true,
     "release_status": "accepted-for-production-pilot",
-    "manifest": "active-execution/native-lines-2026.10.26.2/manifest.json",
+    "manifest": "active-execution/native-gateway-2026.10.26.2/manifest.json",
     "source_layout": "per-artifact",
-    "source_commit": "486c4fcd2f1b61d36baa918c96dcd02a13af68aa",
-    "laravel_commit": "d25455a6949c5d81d1a8f0cdcb9c35596a517ae9"
+    "source_commit": "6a5c4ec106210dfc18788fed4cbbd2f2102562a2",
+    "laravel_commit": "b92528e54d352dd24eb04bdedc8c47c1d910633f"
   },
   "legacy_job_recovery_release": {
     "version": "legacy-job-recovery-2026.10.24.1",
@@ -214,6 +214,15 @@
     "manifest_sha256": "9499f7c51bcf82124e9f3be3cd43f31648a6f1cdf27ba44b2675186afbaf39e5",
     "source_commit": "e555380581eb1c9cd3f0dafeae944ff487b1faa8",
     "rollout": "explicit single-proxy pilot; default remains native-active-2026.10.25.4",
+    "production_pilot_passed": false
+  },
+  "gateway_response_drain": {
+    "version": "native-gateway-2026.10.26.2",
+    "source_commit": "6a5c4ec106210dfc18788fed4cbbd2f2102562a2",
+    "manifest": "active-execution/native-gateway-2026.10.26.2/manifest.json",
+    "path": "active-execution/native-gateway-2026.10.26.2/inoc-node-terminal-v1dot1beta39",
+    "sha256": "a116251294d485eb265e0918e2a4d0da56ad0f3bb33ba439c4821159737ac3c6",
+    "release_status": "accepted-for-production-pilot",
     "production_pilot_passed": false
   }
 }
