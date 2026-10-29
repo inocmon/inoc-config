@@ -192,5 +192,14 @@
     "source_layout": "per-artifact",
     "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
     "laravel_commit": "bc8e74154130138161b3e1628ba09a436da107ba"
+  },
+  "remote_legacy_execution_release": {
+    "version": "wn-legacy-config5-kex-2026.10.29.1",
+    "production_ready": true,
+    "release_status": "accepted-for-controlled-WNTELECOM-legacy-pilot",
+    "manifest": "remote-execution/wn-legacy-config5-kex-2026.10.29.1/manifest.json",
+    "source_layout": "per-artifact",
+    "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
+    "laravel_commit": null
   }
 }
