@@ -3,3 +3,5 @@ rsa/
 certs/
 .env
 logs/*
+/active-execution/wn-config5-kex-2026.10.29.1/inoc-node-terminal-v1dot1beta39
+/active-execution/wn-config5-kex-2026.10.29.1/inoc-config5

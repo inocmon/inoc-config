@@ -183,5 +183,14 @@
     },
     "rollout": "MCP administrative proxy executor; preserve Node/config5 pilots",
     "manifest": "administrative/v2026.10.28-mcp-rev9.1/manifest.json"
+  },
+  "remote_active_execution_release": {
+    "version": "wn-config5-kex-2026.10.29.1",
+    "production_ready": true,
+    "release_status": "accepted-for-controlled-WNTELECOM-pilot",
+    "manifest": "active-execution/wn-config5-kex-2026.10.29.1/manifest.json",
+    "source_layout": "per-artifact",
+    "source_commit": "da719ff43ec067521efacf9a21500ff2fc7b2f63",
+    "laravel_commit": "bc8e74154130138161b3e1628ba09a436da107ba"
   }
 }
