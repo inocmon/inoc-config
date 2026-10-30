@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "contract": "laravel-execution-v1",
+  "release_id": "wn-config5-huawei-context-2026.10.30.1",
+  "runtime_mode": "active",
+  "source_layout": "per-artifact",
+  "source_commit": "2fc00d3139a11f9d19b20d4c6e95002b8772b609",
+  "laravel_commit": "2c421d0f4f09eaa057433f344aab48493b5cc40c",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "published": true,
+  "release_status": "candidate-for-controlled-WNTELECOM-validation",
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/inoc-node-terminal-v1dot1beta39",
+      "source_commit": "6a5c4ec106210dfc18788fed4cbbd2f2102562a2",
+      "bytes": 129305792,
+      "sha256": "a116251294d485eb265e0918e2a4d0da56ad0f3bb33ba439c4821159737ac3c6",
+      "package": {
+        "path": "active-execution/wn-config5-kex-2026.10.29.2/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42554623,
+        "sha256": "4f468e47ba8ff433396d6824870aa552d415e63e78425d6f35350dab9412eb21",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/inoc-config5",
+      "source_commit": "2fc00d3139a11f9d19b20d4c6e95002b8772b609",
+      "bytes": 21306112,
+      "sha256": "63131d630876135634d256329b0ef3c6f3832a6cc7dee637b40cbcf63b6d0c6d",
+      "package": {
+        "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/inoc-config5.gz",
+        "format": "gzip",
+        "bytes": 21029586,
+        "sha256": "d61c66ecef17eae50379ec3e98f93f85b072e27b1de3bf6126ee908d5865a9f9"
+      }
+    }
+  },
+  "support_files": {
+    "native-active-support.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/native-active-support.py",
+      "bytes": 8395,
+      "sha256": "644fe2512ab2952a5c6d85e25d5776141387cb554af1794d9a37a3db0939de71",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-certificate-manager.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/proxy-certificate-manager.py",
+      "bytes": 13138,
+      "sha256": "333f6842a0926bc44e56902aeb8affd9e3d598c65f8c7cb69bce095b50eda80a",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-certificate-dns-hook.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/proxy-certificate-dns-hook.py",
+      "bytes": 3754,
+      "sha256": "ca146e72af7b5c5be91f0abc970fb94b0a64353a17fbc493994358f3264e9fc3",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "install-proxy-certificate-renewal.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/install-proxy-certificate-renewal.py",
+      "bytes": 6857,
+      "sha256": "a6290bb5a8a23a5cc37f0bb20000355f0f0b6c404ab7654bb7ca1f3bf40edd39",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "proxy-runtime-status.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/proxy-runtime-status.py",
+      "bytes": 9038,
+      "sha256": "9fcc06659ff87ed4588c4f97affeab489edbf62cc2aee4ebfdca176799a23e07",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    },
+    "install-proxy-runtime-status.py": {
+      "path": "active-execution/wn-config5-huawei-context-2026.10.30.1/install-proxy-runtime-status.py",
+      "bytes": 4045,
+      "sha256": "b0f6b5b938ce4131bb38f0a2046f3cda9db6c5a8d0d1e656c69fc336e95017d9",
+      "source_repository": "inocmon/inocmon6",
+      "source_commit": "0f0b0c86064f7b4fa6ad2a592124feb106af122a"
+    }
+  },
+  "validation": {
+    "isolated_binary_ssh_tests": "11 passed",
+    "administrative_source_tests": "16 passed",
+    "node_config5_tests": "12 passed",
+    "production_pilot_passed": false,
+    "source_commit": "2fc00d3139a11f9d19b20d4c6e95002b8772b609",
+    "limits": [
+      "No actual WNTELECOM switch configuration has been retried or validated."
+    ],
+    "initial_kex_tests": "3 passed",
+    "ssh_phase_budget_tests": "4 passed"
+  }
+}
