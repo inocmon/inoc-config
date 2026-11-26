@@ -1,0 +1,10 @@
+{
+    "version": "v2026.11.01-maranet-executor.1",
+    "path": "administrative/v2026.11.01-maranet-executor.1/inoc-config4",
+    "sha256": "8c751ed84925d19a22e5270674403d10eecfa955c10b0bf5c7883a78bf9ec9c4",
+    "source_commit": "0f33ed841281d0d1f8e4a1841a6b1aa8a0539746",
+    "source_repository": "inocmon/inoc-config-project",
+    "source_tree_clean_at_build": true,
+    "execution_contract": "administrative-batch-v1",
+    "stop_on_error": true
+}

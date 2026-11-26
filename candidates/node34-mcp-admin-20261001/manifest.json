@@ -1,0 +1,57 @@
+{
+  "schema_version": 1,
+  "status": "development_candidate",
+  "production_ready": false,
+  "production_deployed": false,
+  "version": "1.1beta34",
+  "execution_contract": "strict-batch-v1",
+  "source_repository": "inocmon/inoc-config-project",
+  "source_commit": "5ab69576b6fc110fd1e6c2efe8d598e4789c4cd6",
+  "source_tag": "inoc-config-build-source-candidate-2026.10.01-mcp-admin",
+  "artifact": {
+    "file": "inoc-node-terminal-v1dot1beta34",
+    "bytes": 52032894,
+    "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21",
+    "path": "inoc-node-terminal-v1dot1beta34"
+  },
+  "target": "node18-linux-x64",
+  "toolchain": {
+    "node": "v22.22.1",
+    "npm": "9.2.0",
+    "pkg": "5.8.1",
+    "host": "Linux x86_64"
+  },
+  "source_hashes": "source-SHA256SUMS",
+  "build_record": "candidate-build.json",
+  "acceptance_passed": true,
+  "acceptance": {
+    "node_virtual_ssh": {
+      "cases": [
+        "success",
+        "cli_error_stops",
+        "disconnect_unknown",
+        "legacy_read",
+        "executor_hash_mismatch",
+        "invalid_separator"
+      ]
+    },
+    "mcp_virtual_ssh": {
+      "success_assertions": 12,
+      "cli_error_assertions": 15,
+      "replay_without_resubmission": true
+    },
+    "tls_verified": true,
+    "external_node_modules": false,
+    "real_network_writes": 0
+  },
+  "stable_artifact_changed": false,
+  "intended_branch": "candidate/node34-mcp-admin-20261001",
+  "intended_tag": "inoc-config-candidate-node34-mcp-admin-2026.10.01",
+  "limits": [
+    "No Windows build/acceptance",
+    "No production or remote proxy deployment",
+    "No real device configuration",
+    "No ChatGPT voice or client OAuth acceptance",
+    "Bit-for-bit rebuild determinism not established"
+  ]
+}

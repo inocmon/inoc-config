@@ -1,0 +1,31 @@
+{
+  "source_commit": "28353ac62cbedbb9919304873af9a70202c40fea",
+  "builder_image": "sha256:ffd829b1b4c073bf0ac73dc9ae685ae054d7765e62a9b18fb55fb486f28d825d",
+  "sha256": "229d949ed1c005559012cfd3b23f5ca24d91f533ead8d311d4f57154aeb16945",
+  "binary_bytes": 22948704,
+  "administrative_capabilities": {
+    "execution_contract": "administrative-batch-v1",
+    "stop_on_error": true,
+    "protocols": [
+      "ssh",
+      "telnet"
+    ]
+  },
+  "administrative_capabilities_seconds": 1.73,
+  "readonly_contract": {
+    "version": "rev9-pon-v1",
+    "policy_sha256": "2881a6faff762ce8c0bece1d2609d15e226a09eb286e4ce1dcbea3cc14a95964",
+    "confirmations": "reject"
+  },
+  "readonly_contract_seconds": 1.618,
+  "version": "v2026.10.16-admin-batch-rc2",
+  "path": "administrative/v2026.10.16-admin-batch-rc2/inoc-config4",
+  "execution_contract": "administrative-batch-v1",
+  "validation": {
+    "unit_tests": 59,
+    "ssh_source_tests": 5,
+    "ssh_binary_tests": 5,
+    "real_device_writes": false
+  },
+  "rollout": "MCP administrative monitor executor; preserve Node/config5 pilots"
+}

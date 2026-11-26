@@ -1,0 +1,21 @@
+{
+  "version": "v2026.10.04-operability-dev.1",
+  "environment": "development",
+  "production_ready": false,
+  "rollout": "explicit client/proxy/device selection",
+  "platform": "linux-amd64",
+  "preserves_config4": true,
+  "requires_manual_ssh_host_key_registration": false,
+  "artifacts": {
+    "inoc-config5": {
+      "path": "config5/v2026.10.04-operability-dev.1/inoc-config5",
+      "sha256": "25f57a537b225106a341db642bb6fa781763e8b03ed7602d653e500de2b3da66",
+      "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+    },
+    "inoc-node-terminal-v1dot1beta37": {
+      "path": "config5/v2026.10.04-operability-dev.1/inoc-node-terminal-v1dot1beta37",
+      "sha256": "3a54270e0acc76d9a0b23f58b93636613942d29a2eb17700f28a74acc473e710",
+      "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+    }
+  }
+}

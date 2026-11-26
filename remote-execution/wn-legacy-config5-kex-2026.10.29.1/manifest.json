@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "release_id": "wn-legacy-config5-kex-2026.10.29.1",
+  "contract": "laravel-execution-v1",
+  "production_ready": true,
+  "acceptance_passed": true,
+  "release_status": "accepted-for-controlled-WNTELECOM-legacy-pilot",
+  "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
+  "runtime_modes": [
+    "legacy-https"
+  ],
+  "node_runtime": {
+    "version": "22.23.4",
+    "sha256": "94efd062ed066c1a0b332e18249859c905e920eeada5df55d24c99b919629a90",
+    "archive_sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce"
+  },
+  "artifacts": {
+    "inoc-node-terminal-v1dot1beta39": {
+      "path": "remote-execution/wn-legacy-config5-kex-2026.10.29.1/inoc-node-terminal-v1dot1beta39",
+      "sha256": "09fad594be2b2e224441810092f1306e562c5b8cc6fe825760812ba44d5231ce",
+      "bytes": 128978112,
+      "source_commit": "14f819fab09d3e69ef12e492de11acd387db5824",
+      "package": {
+        "path": "remote-execution/wn-legacy-config5-kex-2026.10.29.1/inoc-node-terminal-v1dot1beta39.gz",
+        "bytes": 42836106,
+        "sha256": "36ee00102cdb50332fd613c34be3a2e9eb4dc6b26eefc8f3b6438c1d99a105be",
+        "format": "gzip"
+      }
+    },
+    "inoc-config5": {
+      "path": "remote-execution/wn-legacy-config5-kex-2026.10.29.1/inoc-config5",
+      "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
+      "bytes": 21304856,
+      "sha256": "c532ea708da4ef7fd780c35757a75de716a639f4506ad8aae5139c6af58a167a"
+    }
+  },
+  "validation": {
+    "config5_binary_loopback_tests": 31,
+    "laravel_legacy_compatibility_tests": 55,
+    "materializer_tests": 15,
+    "node_sha256_unchanged_from_2026_10_25_1": true,
+    "production_proxy_validated": false
+  },
+  "limits": [
+    "Updates legacy Node/Config5 service only on the explicitly selected WNTELECOM proxy.",
+    "Runtime validation requires live test-mode #inocmon via /remote-execute."
+  ],
+  "published": true,
+  "legacy_acceptance_passed": true,
+  "source_layout": "per-artifact",
+  "runtime_mode": "dedicated"
+}

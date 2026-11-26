@@ -1,0 +1,6 @@
+> pkg@5.8.1
+(node:285822) [DEP0040] DeprecationWarning: The `punycode` module is deprecated. Please use a userland alternative instead.
+(Use `node --trace-deprecation ...` to show where the warning was created)
+> Fetching base Node.js binaries to PKG_CACHE_PATH
+
+

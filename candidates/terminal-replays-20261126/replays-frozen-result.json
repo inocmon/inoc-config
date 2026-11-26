@@ -1,0 +1,1 @@
+{"status":"passed","version":"1.1beta40","network":"loopback only","checks":["encrypted authentication","host filtering","metadata projection","JSON remains private","historical file compatibility","read-only index","corrupt index error"]}

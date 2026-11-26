@@ -1,0 +1,14 @@
+{
+  "checked_at_utc": "2026-10-02T10:14:00Z",
+  "target": "isolated DEV loopback fixture",
+  "terminal_version": "1.1beta35",
+  "api_ping": {
+    "status": 200,
+    "remoteConfigProxyOnlyLogs": true,
+    "activeJobs": 0,
+    "scheduledJobs": 0
+  },
+  "authentication": "temporary RSA key and self-signed localhost certificate",
+  "equipment_access": false,
+  "config_jobs_started": false
+}

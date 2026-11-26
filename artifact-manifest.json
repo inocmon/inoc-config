@@ -1,13 +1,227 @@
 {
-  "schema_version": 1,
-  "artifact_repository": "inocmon/inoc-config",
-  "source_repository": "inocmon/inoc-config-project",
-  "migration_source_commit": "d4b7825da979d976a7511cd77ffc53c74f9ebbce",
-  "publication_kind": "authoritative-server-baseline",
-  "build_commit_reported": null,
-  "stable_artifact": {
-    "version": "1.1beta33",
-    "path": "inoc-node-terminal-v1dot1beta33",
-    "sha256": "f86e555cd2a27c75d95c204dbde4e11f17188785c0e50f6e26809d8ea09e081f"
-  }
+    "schema_version": 1,
+    "artifact_repository": "inocmon/inoc-config",
+    "source_repository": "inocmon/inoc-config-project",
+    "migration_source_commit": "d4b7825da979d976a7511cd77ffc53c74f9ebbce",
+    "publication_kind": "authoritative-server-baseline",
+    "build_commit_reported": null,
+    "stable_artifact": {
+        "version": "1.1beta35",
+        "path": "inoc-node-terminal-v1dot1beta35",
+        "sha256": "b18fe2dd8332f3347b896622e7999c2714dc769a107577e35d0407641382b4a4",
+        "source_repository": "inocmon/inoc-config-project",
+        "source_commit": "df0605f9e7ecdb456e7af78b253e2b680f0b9208",
+        "production_ready": true
+    },
+    "pon_artifact": {
+        "version": "v2026.09.14-rev9-pon-shared",
+        "manifest": "pon/v2026.09.14-rev9-pon-shared/manifest.json",
+        "source_commit": "7dd4de0af8ed3613c2c1e896f7bbc53fd7b452e8",
+        "path": "pon/v2026.09.14-rev9-pon-shared/inoc-config4",
+        "sha256": "0320591f75f1a18a7ec202fa2d4d692aaa3bf79995c085b84c15e993cf246371"
+    },
+    "datacom_config_prompt_fix": {
+        "version": "v2026.09.20-datacom-config-prompt",
+        "source_commit": "55694c6",
+        "path": "inoc-config4-beta13-datacom-prompt",
+        "sha256": "7bfbc1ff58e950aee85635026e92ceb9f4cf26a7f85560d04f2fbb3b0d5faa78",
+        "rollback_path": "inoc-config4-beta13"
+    },
+    "development_candidates": {
+        "node34-mcp-admin-20261001": {
+            "version": "1.1beta34",
+            "production_ready": false,
+            "source_commit": "5ab69576b6fc110fd1e6c2efe8d598e4789c4cd6",
+            "path": "inoc-node-terminal-v1dot1beta34",
+            "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21",
+            "manifest": "candidates/node34-mcp-admin-20261001/manifest.json"
+        },
+        "terminal-replays-20261126": {
+            "version": "1.1beta40",
+            "production_ready": false,
+            "source_commit": "ae28955698b4142639a10e2fa93dba08fc898721",
+            "manifest": "candidates/terminal-replays-20261126/manifest.json",
+            "package": {
+                "path": "candidates/terminal-replays-20261126/inoc-node-terminal-v1dot1beta40.gz",
+                "format": "gzip",
+                "sha256": "0fc290366c1d04c3d52f297796986a250b1873b235239c18e9f16a9ebbd01606",
+                "bytes": 42834169
+            }
+        }
+    },
+    "remote_config_proxy_logs": {
+        "version": "v2026.10.02-remote-config-proxy-logs.1",
+        "production_ready": true,
+        "source_repository": "inocmon/inoc-config-project",
+        "source_commit": "562263145cc04e7c2ca3ba61e1ab269d294f3d3c",
+        "path": "candidates/remote-config-proxy-logs-20261002/inoc-config4",
+        "sha256": "9cce200436a3f612ccd12a2147339e4645042476268110389c22348a7afbf8a4",
+        "manifest": "candidates/remote-config-proxy-logs-20261002/manifest.json",
+        "node_terminal_version": "1.1beta35",
+        "node_terminal_path": "inoc-node-terminal-v1dot1beta35",
+        "node_terminal_sha256": "b18fe2dd8332f3347b896622e7999c2714dc769a107577e35d0407641382b4a4",
+        "node_terminal_source_commit": "df0605f9e7ecdb456e7af78b253e2b680f0b9208",
+        "rollback_path": "inoc-config4-beta13-datacom-prompt",
+        "validation": {
+            "compiled_inoc_config4": "PASS",
+            "compiled_node_terminal_version": "PASS: 1.1beta35",
+            "compiled_node_terminal_api_ping": "PASS: HTTPS API, authenticated fixture, remoteConfigProxyOnlyLogs=true, no active/scheduled jobs",
+            "node_terminal_unit_tests": "PASS: 7/7",
+            "real_device_writes": false
+        }
+    },
+    "glink_iosxr_prompt_fix": {
+        "version": "v2026.10.04-glink-iosxr-prompt.1",
+        "production_ready": true,
+        "source_repository": "inocmon/inoc-config-project",
+        "source_commit": "8c29c746880a39482649ab905dd4131ec7502070",
+        "path": "inoc-config4",
+        "sha256": "3998cfebe6ff495bcae816faf2eaa5e867b6938ecde0d882f9374f6c8574a9e5",
+        "manifest": "candidates/glink-iosxr-prompt-20261004/manifest.json",
+        "rollback_artifact_commit": "33103d2d9f8658c53336b0989713eeba5b2947ec"
+    },
+    "config5_pilot": {
+        "version": "v2026.10.04-glink-pilot.1",
+        "manifest": "config5/v2026.10.04-glink-pilot.1/manifest.json",
+        "rollout": "explicit client/proxy/device selection",
+        "artifacts": {
+            "inoc-config5": {
+                "path": "config5/v2026.10.04-glink-pilot.1/inoc-config5",
+                "sha256": "e19d5318220bff689f9a3a78f133f6351b216a7d2952c54241b98c97611f4456",
+                "source_commit": "e5ba016f579dadaa9c3ad4450b597f67daf41dab"
+            },
+            "inoc-node-terminal-v1dot1beta36": {
+                "path": "config5/v2026.10.04-glink-pilot.1/inoc-node-terminal-v1dot1beta36",
+                "sha256": "284e49c77cb9913e05a359322bfd63e97781fcd244c30db54d072790f146a741",
+                "source_commit": "6d10186cb89263b5e72d6b83b7e3b70e26f81aca"
+            }
+        }
+    },
+    "config5_operability_candidate": {
+        "version": "v2026.10.04-operability-dev.1",
+        "production_ready": false,
+        "manifest": "config5/v2026.10.04-operability-dev.1/manifest.json",
+        "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba",
+        "artifacts": {
+            "inoc-config5": {
+                "path": "config5/v2026.10.04-operability-dev.1/inoc-config5",
+                "sha256": "25f57a537b225106a341db642bb6fa781763e8b03ed7602d653e500de2b3da66",
+                "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+            },
+            "inoc-node-terminal-v1dot1beta37": {
+                "path": "config5/v2026.10.04-operability-dev.1/inoc-node-terminal-v1dot1beta37",
+                "sha256": "3a54270e0acc76d9a0b23f58b93636613942d29a2eb17700f28a74acc473e710",
+                "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+            }
+        }
+    },
+    "config5_operability_release": {
+        "version": "v2026.10.04-operability.2",
+        "production_ready": true,
+        "manifest": "config5/v2026.10.04-operability.2/manifest.json",
+        "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba",
+        "rollout": "explicit client/proxy/device selection",
+        "artifacts": {
+            "inoc-config5": {
+                "path": "config5/v2026.10.04-operability.2/inoc-config5",
+                "sha256": "25f57a537b225106a341db642bb6fa781763e8b03ed7602d653e500de2b3da66",
+                "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+            },
+            "inoc-node-terminal-v1dot1beta37": {
+                "path": "config5/v2026.10.04-operability.2/inoc-node-terminal-v1dot1beta37",
+                "sha256": "3a54270e0acc76d9a0b23f58b93636613942d29a2eb17700f28a74acc473e710",
+                "source_commit": "49007c545400a8867cfff13bd930949a0d9396ba"
+            }
+        }
+    },
+    "fiberhome_pilot": {
+        "version": "v2026.10.14-fiberhome.1",
+        "rollout": "explicit Maranet client/proxy/device pilot",
+        "production_ready": true,
+        "source_commit": "27f03edb9f19cd6b1c9c833d67fdd60122203be7",
+        "artifacts": {
+            "inoc-config5": {
+                "path": "config5/v2026.10.14-fiberhome.1/inoc-config5",
+                "sha256": "cd5f66755c0fe9d63eb58cb387058b3522ea3eeaafedb64aa960a14c6e6edbba",
+                "source_commit": "5423ecad031d0495bd0095aff17ed6ec9952a131"
+            },
+            "inoc-node-terminal-v1dot1beta38": {
+                "path": "config5/v2026.10.14-fiberhome.1/inoc-node-terminal-v1dot1beta38",
+                "sha256": "da5a61955bf3eb485eb4b110fd4484a32099347d9740828d1ab4401d701f20de",
+                "source_commit": "8fcfc1fa6c27ee4fd751dfa220240c80a70ac5d5"
+            }
+        },
+        "validation": {
+            "compiled_proxy_and_executor_isolated": "PASS",
+            "telnet_same_enable_missing_and_rejected_command": "PASS",
+            "node_tests": 26,
+            "executor_tests": 29
+        },
+        "limitations": [
+            "Live OLT CLI queries still require firmware validation",
+            "No optical dBm scale inferred",
+            "Does not replace the global stable executor"
+        ],
+        "manifest": "config5/v2026.10.14-fiberhome.1/manifest.json"
+    },
+    "administrative_batch": {
+        "version": "v2026.10.28-mcp-rev9.1",
+        "source_commit": "d583d84895ab18c313fda887c502995d7e7c426e",
+        "builder_image": "sha256:3cac2ef8517cf7b90dd3c482bc583175c960753eb17ebc644f5ec630dd6b7a43",
+        "sha256": "02087a0a044c9f3520bdf03e052c38e32a21ca178b4bf5b7239544ac21634fb3",
+        "binary_bytes": 22950472,
+        "administrative_capabilities": {
+            "execution_contract": "administrative-batch-v1",
+            "stop_on_error": true,
+            "protocols": [
+                "ssh",
+                "telnet"
+            ]
+        },
+        "readonly_contract": {
+            "version": "rev9-pon-v1",
+            "policy_sha256": "2881a6faff762ce8c0bece1d2609d15e226a09eb286e4ce1dcbea3cc14a95964",
+            "confirmations": "reject"
+        },
+        "path": "administrative/v2026.10.28-mcp-rev9.1/inoc-config4",
+        "execution_contract": "administrative-batch-v1",
+        "validation": {
+            "source_administrative_tests": 10,
+            "source_readonly_tests": 28,
+            "compiled_administrative_capabilities": "PASS",
+            "compiled_readonly_contract": "PASS",
+            "real_device_writes": false,
+            "compiled_ssh_loopback_tests": 6
+        },
+        "rollout": "MCP administrative proxy executor; preserve Node/config5 pilots",
+        "manifest": "administrative/v2026.10.28-mcp-rev9.1/manifest.json"
+    },
+    "remote_active_execution_release": {
+        "version": "wn-config5-kex-2026.10.29.2",
+        "production_ready": true,
+        "release_status": "accepted-for-controlled-WNTELECOM-pilot",
+        "manifest": "active-execution/wn-config5-kex-2026.10.29.2/manifest.json",
+        "source_layout": "per-artifact",
+        "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
+        "laravel_commit": "bc8e74154130138161b3e1628ba09a436da107ba"
+    },
+    "remote_legacy_execution_release": {
+        "version": "wn-legacy-config5-kex-2026.10.29.1",
+        "production_ready": true,
+        "release_status": "accepted-for-controlled-WNTELECOM-legacy-pilot",
+        "manifest": "remote-execution/wn-legacy-config5-kex-2026.10.29.1/manifest.json",
+        "source_layout": "per-artifact",
+        "source_commit": "8a175f510e0aa9507ab7e682eff355098f07f64d",
+        "laravel_commit": null
+    },
+    "maranet_administrative_executor": {
+        "version": "v2026.11.01-maranet-executor.1",
+        "path": "administrative/v2026.11.01-maranet-executor.1/inoc-config4",
+        "sha256": "8c751ed84925d19a22e5270674403d10eecfa955c10b0bf5c7883a78bf9ec9c4",
+        "source_commit": "0f33ed841281d0d1f8e4a1841a6b1aa8a0539746",
+        "source_repository": "inocmon/inoc-config-project",
+        "source_tree_clean_at_build": true,
+        "execution_contract": "administrative-batch-v1",
+        "stop_on_error": true
+    }
 }
