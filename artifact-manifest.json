@@ -35,6 +35,18 @@
             "path": "inoc-node-terminal-v1dot1beta34",
             "sha256": "68f382b016474f96a97d94583a469b0bcdf61ef14cbf7e240036d160bd18ac21",
             "manifest": "candidates/node34-mcp-admin-20261001/manifest.json"
+        },
+        "terminal-replays-20261126": {
+            "version": "1.1beta40",
+            "production_ready": false,
+            "source_commit": "ae28955698b4142639a10e2fa93dba08fc898721",
+            "manifest": "candidates/terminal-replays-20261126/manifest.json",
+            "package": {
+                "path": "candidates/terminal-replays-20261126/inoc-node-terminal-v1dot1beta40.gz",
+                "format": "gzip",
+                "sha256": "0fc290366c1d04c3d52f297796986a250b1873b235239c18e9f16a9ebbd01606",
+                "bytes": 42834169
+            }
         }
     },
     "remote_config_proxy_logs": {

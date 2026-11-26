@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "node_version": "v22.23.4",
+  "release_line": "LTS Jod",
+  "platform": "linux",
+  "architecture": "x64",
+  "archive": "node-v22.23.4-linux-x64.tar.xz",
+  "url": "https://nodejs.org/dist/v22.23.4/node-v22.23.4-linux-x64.tar.xz",
+  "sha256": "1805bcd35e6815559bd2eb97db438d3fdb0eb3a5e6a977b7c1badca76337e9ce",
+  "archive_bytes": 31029996,
+  "release_date": "2026-10-20",
+  "checksum_source": "https://nodejs.org/dist/v22.23.4/SHASUMS256.txt",
+  "release_index": "https://nodejs.org/dist/index.json",
+  "packager": "@yao-pkg/pkg",
+  "packager_version": "6.23.0",
+  "mode": "enhanced-sea",
+  "minimum_glibc": "2.28"
+}
