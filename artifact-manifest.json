@@ -47,6 +47,18 @@
                 "sha256": "0fc290366c1d04c3d52f297796986a250b1873b235239c18e9f16a9ebbd01606",
                 "bytes": 42834169
             }
+        },
+        "terminal-lifecycle-20261127": {
+            "version": "1.1beta41",
+            "production_ready": false,
+            "source_commit": "8c72da66b4b48e07d0537b056c4c6c8a746d115b",
+            "manifest": "candidates/terminal-lifecycle-20261127/manifest.json",
+            "package": {
+                "path": "candidates/terminal-lifecycle-20261127/inoc-node-terminal-v1dot1beta41.gz",
+                "format": "gzip",
+                "sha256": "681a661d340c2f3972ece28f3bb5c09eea405d1607d3b719c6041c11e2d8d3b9",
+                "bytes": 42557387
+            }
         }
     },
     "remote_config_proxy_logs": {

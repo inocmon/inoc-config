@@ -1,0 +1,1 @@
+{"status":"passed","version":"1.1beta41","network":"loopback only","sessions":13,"aborted_handshakes":10,"process_survived":true,"all_replays_finalized":true,"checks":["real SSH","concurrent survivor","early disconnect","authentication failure","normal close","encrypted replay listing","replay content"]}
