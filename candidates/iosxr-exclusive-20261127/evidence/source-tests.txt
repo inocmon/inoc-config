@@ -1,0 +1,97 @@
+test_configuration_description_does_not_become_a_cli_error (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_historical_message_in_show_output_does_not_reject_read (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_successful_exclusive_entry_keeps_commands_unchanged (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_administrative_transcript_is_bounded_without_losing_latest_prompt (tests.test_administrative_batch.AdministrativeBatchTest) ... ok
+test_disconnection_preserves_unknown_and_never_resends (tests.test_administrative_batch.AdministrativeBatchTest) ... ERROR:root:Erro ao conectar via SSH: command_outcome_unknown: terminal disconnected
+ok
+test_first_cli_error_stops_batch_including_commit (tests.test_administrative_batch.AdministrativeBatchTest) ... ok
+test_huawei_confirmation_space_variants_are_bound_to_exact_interface (tests.test_administrative_batch.AdministrativeBatchTest) ... ok
+test_huawei_flash_save_without_colon_is_answered_once (tests.test_administrative_batch.AdministrativeBatchTest) ... ok
+test_md_cli_mode_required_before_sending_bare_configure (tests.test_administrative_batch.AdministrativeBatchTest) ... ERROR:root:Erro ao conectar via SSH: nokia_md_configuration_mode_required: confirm MD-CLI configuration mode before mutation
+ERROR:root:Erro ao conectar via SSH: nokia_md_configuration_mode_required: confirm MD-CLI configuration mode before mutation
+ok
+test_readonly_confirmation_guard_still_rejects_spaced_variant (tests.test_administrative_batch.AdministrativeBatchTest) ... ok
+test_repeated_and_initial_confirmations_are_rejected (tests.test_administrative_batch.AdministrativeBatchTest) ... ERROR:root:Erro ao conectar via SSH: confirmation_required: unexpected or repeated prompt
+ok
+test_transport_annotation_is_not_a_device_prompt (tests.test_administrative_batch.AdministrativeBatchTest) ... ERROR:root:Erro ao conectar via SSH: Timeout ao esperar o prompt.
+ok
+test_wrong_interface_unexpected_confirmation_and_nested_login_do_not_receive_input (tests.test_administrative_batch.AdministrativeBatchTest) ... ERROR:root:Erro ao conectar via SSH: confirmation_required: prompt does not match submitted action
+ERROR:root:Erro ao conectar via SSH: confirmation_required: prompt does not match submitted action
+ERROR:root:Erro ao conectar via SSH: interactive_login_required: use the registered target directly
+ok
+test_datacom_cli_syntax_error_stops_before_interface_or_shutdown (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_datacom_exclusive_config_commits_only_two_requested_ports (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_glink_10_40_4_122_port27_sequence_after_existing_session_banner (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_ios_xr_context_prompts_allow_the_entire_authorized_sequence (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_ios_xr_three_ports_from_glink_incident_advance_through_contexts (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_nokia_minor_error_stops_before_later_configuration_or_commit (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_routeros_prompt_allows_read_response (tests.test_executor_incidents.ExecutorIncidentTest) ... ok
+test_ambiguous_or_malformed_requests_reject (tests.test_config5_contract.Config5ContractTest) ... ok
+test_array_preserves_native_command_text (tests.test_config5_contract.Config5ContractTest) ... ok
+test_capability_probe_has_no_connection_or_config_read (tests.test_config5_contract.Config5ContractTest) ... ok
+test_conflicting_sources_reject_before_io (tests.test_config5_contract.Config5ContractTest) ... ok
+test_main_forwards_commands_individually_and_forces_strict_status (tests.test_config5_contract.Config5ContractTest) ... ok
+test_backpressure_and_broken_pipe_do_not_fail_execution (tests.test_config5_contract.ExecutionProgressTest) ... ok
+test_private_frames_are_bounded_and_do_not_pollute_stdout (tests.test_config5_contract.ExecutionProgressTest) ... ok
+test_datacom_cli_syntax_error_stops_before_interface_or_shutdown (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_datacom_exclusive_config_commits_only_two_requested_ports (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_glink_10_40_4_122_port27_sequence_after_existing_session_banner (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_ios_xr_context_prompts_allow_the_entire_authorized_sequence (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_ios_xr_three_ports_from_glink_incident_advance_through_contexts (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_isam_nested_prompt_remains_a_complete_line (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_nokia_classic_modified_prompt_and_nested_context_complete (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_nokia_minor_error_stops_before_later_configuration_or_commit (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_routeros_prompt_allows_read_response (tests.test_config5_incident_replay.Config5IncidentReplayTest) ... ok
+test_configuration_prompt_is_accepted_by_the_write_transport (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_guard_rejects_confirmation_and_configuration_before_any_response (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_help_completion_handles_fragmented_ansi_and_backspace_without_send (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_help_echo_alone_is_not_success_and_partial_diagnostic_hides_credentials (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_inline_token_help_is_sent_without_newline_and_closes_after_help (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_legacy_session_keeps_existing_initial_read_and_newline (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_literal_help_rejects_unreviewed_operational_values_and_control_characters (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_missing_ssh_host_file_does_not_block_authentication (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via SSH: expected string or bytes-like object
+ok
+test_nokia_nested_context_never_qualifies_as_observed_base_prompt (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via SSH: rev9_readonly_configuration_context_forbidden
+ERROR:root:Erro ao conectar via SSH: rev9_readonly_configuration_context_forbidden
+ERROR:root:Erro ao conectar via SSH: rev9_initial_prompt_timeout tail="typ:user>admin>#"
+ok
+test_nokia_observed_base_prompt_allows_only_the_requested_read_query (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_policy_rejects_extra_sources_unknown_commands_and_operational_queries_pending_docs (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_r8_mac_lookup_does_not_authorize_vlan_or_invent_uni (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_r8_service_filters_are_literal_and_platform_scoped (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_sros_contextual_help_sends_no_enter_and_first_page_sends_only_query (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Falha durante consulta SSH: rev9_response_prompt_timeout bytes=33 tail="*A:BNG# show service id 1 pppoe ?"
+ERROR:root:Falha durante consulta SSH: rev9_response_pager_partial bytes=42 tail="Press any key to continue (Q to quit)"
+ok
+test_sros_first_page_pager_and_capture_limit_close_without_continuation (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_sros_policy_bounds_connector_and_first_page_metadata (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_ssh_session_never_answers_confirmation (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Falha durante consulta SSH: rev9_readonly_confirmation_forbidden bytes=15 tail="Continue [Y/N]:"
+ok
+test_strict_help_never_executes_prefix_or_answers_pager_enter_confirmation (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Falha durante consulta SSH: rev9_readonly_confirmation_forbidden bytes=15 tail="Continue [Y/N]:"
+ERROR:root:Falha durante consulta SSH: rev9_response_pager_partial bytes=8 tail="--More--"
+ERROR:root:Falha durante consulta SSH: rev9_response_prompt_timeout bytes=10 tail="{ <cr> }:"
+ERROR:root:Falha durante consulta SSH: rev9_readonly_configuration_context_forbidden bytes=28 tail="typ:[REDACTED]>configure>#"
+ERROR:root:Falha durante consulta SSH: rev9_response_prompt_timeout bytes=23 tail="unknown editable prompt"
+ok
+test_strict_initial_confirmation_is_rejected_without_any_send (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via SSH: rev9_readonly_confirmation_forbidden
+ok
+test_strict_initial_prompt_timeout_never_reads_unready_channel_or_sends (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via SSH: rev9_initial_prompt_timeout tail=""
+ok
+test_strict_read_keeps_one_newline_and_returns_ansi_prompt (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_strict_unknown_initial_prompt_is_evidence_without_implicit_acceptance (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via SSH: rev9_initial_prompt_timeout tail="typ:[REDACTED]>#"
+ok
+test_telnet_session_never_answers_confirmation (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Erro ao conectar via Telnet: rev9_readonly_confirmation_forbidden
+ok
+test_tingua_help_requires_exact_body_context_and_prompt_and_rejects_interaction (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_tingua_scalar_fdb_help_fragmentation_without_enter_or_extra_sends (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_vlan_port_argument_help_handles_fragmented_body_and_ansi_without_sends (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+test_vlan_port_help_never_sends_newline_or_answers_confirmation_or_pager (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ERROR:root:Falha durante consulta SSH: rev9_readonly_confirmation_forbidden bytes=157 tail="typ:[REDACTED]># show vlan cross-connect vlan-port"
+ERROR:root:Falha durante consulta SSH: rev9_response_pager_partial bytes=150 tail="typ:[REDACTED]># show vlan cross-connect vlan-port"
+ERROR:root:Falha durante consulta SSH: rev9_readonly_configuration_context_forbidden bytes=97 tail="typ:user>configure>#"
+ok
+test_vlan_port_help_still_requires_both_lines_exact_context_and_editable_prompt (tests.test_rev9_readonly.Rev9ReadOnlyTest) ... ok
+
+----------------------------------------------------------------------
+Ran 65 tests in 16.548s
+
+OK
