@@ -1,0 +1,66 @@
+{
+  "built_at": "2026-11-27T13:47:06.465089+00:00",
+  "source_commit": "b700ad7ba66d9296f125f0bd09fa6726e990514b",
+  "builder_image": "sha256:ffd829b1b4c073bf0ac73dc9ae685ae054d7765e62a9b18fb55fb486f28d825d",
+  "runtime": "Python 3.10.12 / glibc 2.28 / PyInstaller 6.15.0",
+  "network": "none",
+  "limits": {
+    "memory_bytes": 536870912,
+    "cpu": 1,
+    "pids": 64
+  },
+  "artifacts": [
+    {
+      "file": "inoc-config4-beta13",
+      "sha256": "d254fe5c9ddc8d0c12a4ef5c75495eccd3d58203b4a15780dd3344838a4df240",
+      "bytes": 22949672,
+      "capability": {
+        "execution_contract": "administrative-batch-v1",
+        "stop_on_error": true,
+        "protocols": [
+          "ssh",
+          "telnet"
+        ]
+      }
+    },
+    {
+      "file": "inoc-config5",
+      "sha256": "67f8f68e3f7823c499c989646050aa6bfc7fc04ce653a0c0b7cf50089889eb81",
+      "bytes": 21306304,
+      "capability": {
+        "executor": "inoc-config5",
+        "version": "v5-dev7",
+        "input_contract": "commands-array-v1",
+        "result_contract": "strict-batch-v1",
+        "stop_on_error": true,
+        "preserves_commands": true,
+        "max_commands": 100,
+        "max_command_chars": 1000,
+        "secrets_transport": "stdin-json",
+        "session_profiles": [
+          "fiberhome"
+        ],
+        "remote_execution_contract": "laravel-execution-v1",
+        "firebase_access": false,
+        "progress_contract": "execution-progress-v1",
+        "topology_output_profile": "topology-v1",
+        "execution_modes": [
+          "commands-array",
+          "cli-lines",
+          "shell-script"
+        ],
+        "cli_lines_max_commands": 2000,
+        "max_input_bytes": 100000
+      }
+    }
+  ],
+  "source_files": {
+    "inoc-config4-beta13.py": "2df9c319f4cfc6ec782d392bfd7de3ae9cb48767801845acb1f5ea03c29b2e06",
+    "inoc-config4-beta13.spec": "cc0dab7aaa6dad727bbbe97fa43b83b5997bd7e69ab7a44ca246a86bea9d32cd",
+    "inoc-config5.py": "75fd6d59b103070cc7b7216e8765a44b5c85d3d16982fc1632493a9dcf938862",
+    "inoc-config5.spec": "5ca6768972410c45d5718e81de18c3e3bbfc7fd21cd7ba9e005ef2e396188b84",
+    "fiberhome_session.py": "e5b10993fafc8e9f4512ff2ece711b4840b33bb57d1a8e4c3f2d3289c60e7c96",
+    "rev9_readonly_policy.json": "2881a6faff762ce8c0bece1d2609d15e226a09eb286e4ce1dcbea3cc14a95964"
+  },
+  "production_ready": false
+}

@@ -1,0 +1,17 @@
+test_administrative_ssh_accepted (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_administrative_ssh_history (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_administrative_ssh_refused (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_administrative_telnet_accepted (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_administrative_telnet_history (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_administrative_telnet_refused (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_ssh_accepted (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_ssh_history (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_ssh_refused (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_telnet_accepted (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_telnet_history (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+test_config5_telnet_refused (tests.test_iosxr_exclusive_transport.IOSXRExclusiveTransportTest) ... ok
+
+----------------------------------------------------------------------
+Ran 12 tests in 51.057s
+
+OK

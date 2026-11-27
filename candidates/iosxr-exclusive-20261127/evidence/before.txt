@@ -1,0 +1,56 @@
+test_configuration_description_does_not_become_a_cli_error (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_historical_message_in_show_output_does_not_reject_read (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... test_successful_exclusive_entry_keeps_commands_unchanged (tests.test_iosxr_exclusive.IOSXRExclusiveTest) ... ok
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='administrative', error='Cannot enter exclusive mode. A trial commit is underway in another configuration session.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='administrative', error='  % Cannot enter exclusive mode. A trial commit is underway in another configuration session.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='administrative', error='CANNOT ENTER EXCLUSIVE MODE. A TRIAL COMMIT IS UNDERWAY IN ANOTHER CONFIGURATION SESSION.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='config5', error='Cannot enter exclusive mode. A trial commit is underway in another configuration session.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='config5', error='  % Cannot enter exclusive mode. A trial commit is underway in another configuration session.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+======================================================================
+FAIL: test_refusal_stops_before_mutation_commit_and_exit (tests.test_iosxr_exclusive.IOSXRExclusiveTest) (executor='config5', error='CANNOT ENTER EXCLUSIVE MODE. A TRIAL COMMIT IS UNDERWAY IN ANOTHER CONFIGURATION SESSION.')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/source/tests/test_iosxr_exclusive.py", line 27, in test_refusal_stops_before_mutation_commit_and_exit
+    self.assertFalse(ok)
+AssertionError: True is not false
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.851s
+
+FAILED (failures=6)
